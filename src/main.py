@@ -49,7 +49,11 @@ def create_world():
     w.buildDB(PERSONS,
             STAGES, DAYS, TIMES, ITEMS, WORDS,
             RUBIS, LAYERS)
+    w.setBaseDate(2020)
     # set textures
+    # set history
+    # set lifenote
+    # set block
     return w
 
 def main(): # pragma: no cover
