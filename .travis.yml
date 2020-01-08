@@ -3,6 +3,8 @@ language: python
 python:
     - 3.7
 
+cache: pip
+
 # Handle git submodules yourself
 git:
     submodules: false
@@ -17,8 +19,9 @@ install:
     - pip install mecab-python3
 
 script:
-    - coverage run --rcfile=.coveragerc setup.py test
-    - coverage run --rcfile=.coveragerc src/main.py -osdi --forcemecab
+    - coverage run --parallel-mode --rcfile=.coveragerc setup.py test
+    - coverage run --parallel-mode --rcfile=.coveragerc src/main.py --forcemecab
 
 after_success:
+    - coverage combine
     - coveralls
