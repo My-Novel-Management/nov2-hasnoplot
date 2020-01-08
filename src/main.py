@@ -8,38 +8,32 @@ sys.path.append('storybuilder')
 from storybuilder.builder.world import World
 from storybuilder.assets import basic
 from config import PERSONS, STAGES, DAYS, TIMES, ITEMS, WORDS, RUBIS, LAYERS
-from src.demo.main import ep_demo
+from src.gingatrain.main import ch_gingatrain
+from src.imcat.main import ch_Imacat
+from src.kinkaku.main import ch_kinkakuji
+from src.kinosaki.main import ch_kinosaki
+from src.kokoro.main import ch_kokoro
+from src.lemon.main import ch_lemon
+from src.nolongerhuman.main import ch_nolongerhuman
+from src.runmeros.main import ch_runmeros
+from src.spidersilk.main import ch_spidersilk
+from src.yukiguni.main import ch_yukiguni
+
 
 ## NOTE:
-#   名作10本
-#   1. 走れメロス（太宰治）
-#   1. 吾輩は猫である（夏目漱石）
-#   1. 雪国（川端康成）
-#   1. 蜘蛛の糸（芥川龍之介）
-#   1. 金閣寺（三島由紀夫）
-#   1. 城の崎にて（志賀直哉）
-#   1. こころ（夏目漱石）
-#   1. 檸檬（梶井基次郎）
-#   1. 人間失格（太宰治）
-#   1. 銀河鉄道の夜（宮沢賢治）
+#   1. 走れメロス
+#   2. 吾輩は猫である
+#   3. 蜘蛛の糸
+#   4. 檸檬
+#   5. 雪国
+#   6. 城の崎にて
+#   7. こころ
+#   8. 金閣寺
+#   9. 人間失格
+#   10. 銀河鉄道の夜
 
 
 ## main
-def ch_main(w: World):
-    return w.chapter("main",
-            ep_demo(w).omit(),
-            # 1.走れ編集者
-            # 1.我輩は編集者である
-            # 1.出張先は雪国
-            # 1.蜘蛛よりも細い糸
-            # 1.金閣寺と矜持
-            # 1.城の崎に行きたい
-            # 1.作家のこころ
-            # 1.檸檬は嫌いです
-            # 1.編集失格
-            # 1.銀河鉄道の長い夜
-            )
-
 def create_world():
     """Create a world.
     """
@@ -59,7 +53,16 @@ def create_world():
 def main(): # pragma: no cover
     w = create_world()
     return w.build(
-            ch_main(w)
+            ch_runmeros(w), # 走れメロス
+            ch_Imacat(w), # 吾輩は猫である
+            ch_spidersilk(w), # 蜘蛛の糸
+            ch_lemon(w), # 檸檬
+            ch_yukiguni(w), # 雪国
+            ch_kinosaki(w), # 城の崎にて
+            ch_kokoro(w), # こころ
+            ch_kinkakuji(w), # 金閣寺
+            ch_nolongerhuman(w), # 人間失格
+            ch_gingatrain(w),# 銀河鉄道の夜
             )
 
 
