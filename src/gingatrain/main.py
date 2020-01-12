@@ -9,7 +9,11 @@ sys.path.append('storybuilder')
 ## local libs
 from storybuilder.builder.world import World
 from storybuilder.builder.writer import Writer
+## local files
+from gingatrain.campanella import ep_campanella
 from gingatrain.epilogue import ep_epilogue
+from gingatrain.galaxytrain import ep_galaxytrain
+from gingatrain.truenovel import ep_trunovel
 
 
 ## define alias
@@ -27,5 +31,9 @@ def ch_gingatrain(w: World):
             ##  - 先生から鬼のようなダメ出しと、それでも一点だけ、ほめられる
             ##  - 編集長に見せたら翌朝直々にゲラを渡される、まっかっか
             ##  - まだまだゲラ作業は続く、けれど、これにて一旦編集日記は終わろうと思います、で締める
+            ep_campanella(w),
+            ep_galaxytrain(w),
+            ep_trunovel(w),
             ep_epilogue(w),
+            note="先生を何とか病院に連れ戻し、長編のゲラ修正をする沙奈。自分の作品は無理だったが先生の作品の出版が決まり、何とか一段落するが",
             )

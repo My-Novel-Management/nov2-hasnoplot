@@ -44,4 +44,5 @@ def ep_reason(w: World):
     return w.episode("書けなくなった本当の理由",
             ## NOTE
             sc_truth(w),
+            note="4.先生の親友でライバルだった男性の自殺を聞かされ、それが先生の人生および小説のトラウマになっていると知る",
             )

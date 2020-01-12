@@ -48,4 +48,5 @@ def ep_noplot(w: World):
             ## NOTE
             ##  - プロットすらないと告白された
             sc_havenoplot(w),
+            note="4.先生はプロットすらないと沙奈に告白した",
             )

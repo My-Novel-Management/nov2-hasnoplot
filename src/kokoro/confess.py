@@ -34,4 +34,5 @@ def ep_hisletter(w: World):
     return w.episode("先生の手紙",
             ## NOTE
             sc_hisconfess(w),
+            note="4.先生宛の自殺した元親友の手紙を見つけ、沙奈は彼の自殺が先生の盗作だと告発されていることを知った",
             )

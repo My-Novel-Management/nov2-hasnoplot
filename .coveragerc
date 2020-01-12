@@ -4,6 +4,7 @@ source = src
 omit =
     # projects
     old_*
+    temp/*
     # markdown
     *.md
 

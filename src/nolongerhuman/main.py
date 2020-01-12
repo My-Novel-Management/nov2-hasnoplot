@@ -9,7 +9,12 @@ sys.path.append('storybuilder')
 ## local libs
 from storybuilder.builder.world import World
 from storybuilder.builder.writer import Writer
+## local files
+from nolongerhuman.childhood import ep_childhood
 from nolongerhuman.finishwriting import ep_finished
+from nolongerhuman.firstpart import ep_firstpart
+from nolongerhuman.hishistory import ep_hissecret
+from nolongerhuman.teenager import ep_schooldays
 
 
 ## define alias
@@ -30,5 +35,12 @@ def ch_nolongerhuman(w: World):
             ##  - 自分が一番書きたかったことを思い出す
             ##  - 死にそうになって書き上げる
             ##  - 何とか書き上げたら、先生の容態について一報が
+            ##  - 写真がキーになるが今回はアルバムを持ってくる　（人間失格
+            ##  - バーのマダム的扱いで、深谷先輩を使う
+            ep_firstpart(w),
+            ep_childhood(w),
+            ep_schooldays(w),
+            ep_hissecret(w),
             ep_finished(w),
+            note="死にそうになりながらも何とか長編執筆を終えた沙奈に先生が病院から消えたとの一報が入る",
             )

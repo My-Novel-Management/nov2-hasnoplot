@@ -9,7 +9,11 @@ sys.path.append('storybuilder')
 ## local libs
 from storybuilder.builder.world import World
 from storybuilder.builder.writer import Writer
+## local files
+from lemon.lemon import ep_bomb
 from lemon.memory import ep_mymemory
+from lemon.orange import ep_various_books
+from lemon.pear import ep_noneed_novel
 
 
 ## define alias
@@ -28,5 +32,13 @@ def ch_lemon(w: World):
             ##  - 昔のただの本好きだった頃を思い出して、ライトノベルという枠を外して作品を書き上げた
             ##  - 短編を書き上げたが、掲載されたのは別の作家の作品だった
             ##  - その報告をしたら先生の短編を読ませてもらい、自分が小さい頃に読んだ話を思い出した
+            ## NOTE:
+            ##  - 洋梨：
+            ##  - 蜜柑：
+            ##  - 檸檬：
+            ep_noneed_novel(w),
+            ep_various_books(w),
+            ep_bomb(w),
             ep_mymemory(w),
+            note="何とか依頼された短編を書き終えた沙奈だったが、既にその枠は他の作家により埋められていたのだった",
             )
