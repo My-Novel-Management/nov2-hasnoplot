@@ -37,6 +37,12 @@ def ch_nolongerhuman(w: World):
             ##  - 何とか書き上げたら、先生の容態について一報が
             ##  - 写真がキーになるが今回はアルバムを持ってくる　（人間失格
             ##  - バーのマダム的扱いで、深谷先輩を使う
+            ## NOTE: main
+            ##  - 先生が病院から消えるが、沙奈に書き上げた原稿を渡す為に抜け出したのだった
+            ## NOTE: novel
+            ##  - 徹夜して何とか最後まで書き切る
+            ## NOTE: sub
+            ##  - 先生の
             ep_firstpart(w),
             ep_childhood(w),
             ep_schooldays(w),
