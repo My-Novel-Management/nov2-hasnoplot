@@ -21,7 +21,8 @@ from src.spidersilk.main import ch_spidersilk
 from src.yukiguni.main import ch_yukiguni
 ## blocks
 from src.substories.plagiarism import bk_plagiarism
-
+from src.substories.publish_longnovel import bk_longnovel
+from src.substories.publish_short import bk_shortnovel
 
 ## NOTE:
 #   1. 走れメロス       アイデア        企画        異動、先生との出会い
@@ -53,6 +54,8 @@ def create_world():
     # set block
     w.entryBlock(
             *bk_plagiarism(w),
+            *bk_longnovel(w),
+            *bk_shortnovel(w),
             )
     # set outline
     w.setOutline("出版社に勤める沙奈は世話になった先輩の産休の穴埋めとして書籍部に異動になり、癖のある大先生の担当となるが、原稿を取りに行くとプロットすらないと言われた")

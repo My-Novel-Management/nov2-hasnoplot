@@ -10,10 +10,7 @@ sys.path.append('storybuilder')
 from storybuilder.builder.world import World
 from storybuilder.builder.writer import Writer
 ## local files
-from runmeros.angry import ep_angry_editor
-from runmeros.meeting import ep_firstmeet
-from runmeros.running import ep_go_hero
-from runmeros.sitdown import ep_sitdown_novelist
+from runmeros.episode import ep_main
 
 
 ## define alias
@@ -33,9 +30,6 @@ def ch_runmeros(w: World):
             ##  - 走れ編集者
             ##  - 憤れ編集者
             ##  - 座れ編集者
-            ep_go_hero(w),
-            ep_angry_editor(w),
-            ep_sitdown_novelist(w),
-            ep_firstmeet(w),
+            ep_main(w),
             note="産休の先輩の穴を埋めるべく書籍編集部に異動になった沙奈。だが彼女を待っていたのは地獄のような編集者人生だった",
             )

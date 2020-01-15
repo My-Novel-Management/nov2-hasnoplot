@@ -10,10 +10,7 @@ sys.path.append('storybuilder')
 from storybuilder.builder.world import World
 from storybuilder.builder.writer import Writer
 ## local files
-from yukiguni.barganingpoint import ep_bargaining
-from yukiguni.evening import ep_eveningsight
-from yukiguni.marisong import ep_oldsong
-from yukiguni.yukiguni import ep_snow_story
+from yukiguni.episode import ep_main
 
 
 ## define alias
@@ -36,9 +33,6 @@ def ch_yukiguni(w: World):
             ## NOTE:
             ##  - 雪国だった（先生の地元編
             ##  - 先生の旧知らしい大人の女性
-            ep_eveningsight(w),
-            ep_oldsong(w),
-            ep_snow_story(w),
-            ep_bargaining(w),
+            ep_main(w),
             note="先生の実家（金沢）に連れてこられた沙奈。先生の旧知の人間から色々教わる。先生は長編を書く条件として沙奈も長編を書くことを約束させた",
             )

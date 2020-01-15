@@ -10,10 +10,7 @@ sys.path.append('storybuilder')
 from storybuilder.builder.world import World
 from storybuilder.builder.writer import Writer
 ## local files
-from spidersilk.shortnovel import ep_writenovel
-from spidersilk.spiderthread import ep_spider_thread
-from spidersilk.storyplot import ep_story_plot
-from spidersilk.youngthread import ep_young_thread
+from spidersilk.episode import ep_main
 
 
 ## define alias
@@ -34,9 +31,6 @@ def ch_spidersilk(w: World):
             ##  - 若者のスレッド：小説の神様
             ##  - 物語のプロット
             ##  - 蜘蛛の糸：因果について
-            ep_young_thread(w),
-            ep_story_plot(w),
-            ep_spider_thread(w),
-            ep_writenovel(w),
+            ep_main(w),
             note="プロットすらないと笑う先生の代わりに、何故か沙奈が短編小説を書いてその枠を埋めることになった",
             )

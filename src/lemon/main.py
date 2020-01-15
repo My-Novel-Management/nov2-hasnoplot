@@ -10,10 +10,7 @@ sys.path.append('storybuilder')
 from storybuilder.builder.world import World
 from storybuilder.builder.writer import Writer
 ## local files
-from lemon.lemon import ep_bomb
-from lemon.memory import ep_mymemory
-from lemon.orange import ep_various_books
-from lemon.pear import ep_noneed_novel
+from lemon.episode import ep_main
 
 
 ## define alias
@@ -36,9 +33,6 @@ def ch_lemon(w: World):
             ##  - 洋梨：
             ##  - 蜜柑：
             ##  - 檸檬：
-            ep_noneed_novel(w),
-            ep_various_books(w),
-            ep_bomb(w),
-            ep_mymemory(w),
+            ep_main(w),
             note="何とか依頼された短編を書き終えた沙奈だったが、既にその枠は他の作家により埋められていたのだった",
             )

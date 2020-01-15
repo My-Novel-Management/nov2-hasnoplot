@@ -10,10 +10,7 @@ sys.path.append('storybuilder')
 from storybuilder.builder.world import World
 from storybuilder.builder.writer import Writer
 ## local files
-from kokoro.confess import ep_hisletter
-from kokoro.hisletter import ep_letter
-from kokoro.hisparent import ep_parent
-from kokoro.visitgraves import ep_visitgraves
+from kokoro.episode import ep_main
 
 
 ## define alias
@@ -34,9 +31,6 @@ def ch_kokoro(w: World):
             ##  - 上：先生と私：外で偶然出会う（実は先生がストーカーしていただけ）／謎の墓参り（盗作した友人の
             ##  - 中：先生と親：父親が腎臓の病気／先生から手紙を貰う
             ##  - 下：先生と手紙：先生の友人についての告白
-            ep_visitgraves(w),
-            ep_parent(w),
-            ep_letter(w),
-            ep_hisletter(w),
+            ep_main(w),
             note="先生に送られた、自殺した親友の手紙を見つけ、先生のトラウマの正体を知る沙奈",
             )

@@ -10,10 +10,7 @@ sys.path.append('storybuilder')
 from storybuilder.builder.world import World
 from storybuilder.builder.writer import Writer
 ## local files
-from imcat.beer import ep_cat_and_beer
-from imcat.noplot import ep_noplot
-from imcat.novel import ep_cat_and_books
-from imcat.novelist import ep_novelist
+from imcat.episode import ep_main
 
 
 ## define alias
@@ -36,9 +33,6 @@ def ch_Imacat(w: World):
             ##  - 猫と主人
             ##  - 猫と小説
             ##  - 猫とビール
-            ep_novelist(w),
-            ep_cat_and_books(w),
-            ep_cat_and_beer(w),
-            ep_noplot(w),
+            ep_main(w),
             note="何とか先生から原稿を貰おうとする沙奈だったが、先生にプロットすらないと言われてしまった",
             )

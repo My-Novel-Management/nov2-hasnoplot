@@ -10,11 +10,7 @@ sys.path.append('storybuilder')
 from storybuilder.builder.world import World
 from storybuilder.builder.writer import Writer
 ## local files
-from gingatrain.campanella import ep_campanella
-from gingatrain.epilogue import ep_epilogue
-from gingatrain.galaxytrain import ep_galaxytrain
-from gingatrain.truenovel import ep_trunovel
-
+from gingatrain.episode import ep_main
 
 ## define alias
 W = Writer
@@ -35,9 +31,6 @@ def ch_gingatrain(w: World):
             ##  - 先生の原稿が採用され、校正作業を経て、出版する為、製本される
             ## NOTE: sub
             ##  - 先生のデビュー作は盗作ではなかった（元親友の持ち込み原稿が見つかる）
-            ep_campanella(w),
-            ep_galaxytrain(w),
-            ep_trunovel(w),
-            ep_epilogue(w),
+            ep_main(w),
             note="先生を何とか病院に連れ戻し、長編のゲラ修正をする沙奈。自分の作品は無理だったが先生の作品の出版が決まり、何とか一段落するが",
             )
