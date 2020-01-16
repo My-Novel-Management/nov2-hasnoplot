@@ -10,7 +10,10 @@ sys.path.append('storybuilder')
 from storybuilder.builder.world import World
 from storybuilder.builder.writer import Writer
 ## local files
-from kinkaku.episode import ep_main
+from kinkaku.chapter1 import ep_chapter1
+from kinkaku.chapter2 import ep_chapter2
+from kinkaku.chapter3 import ep_chapter3
+from kinkaku.chapter4 import ep_chapter4
 
 
 ## define alias
@@ -20,6 +23,11 @@ W = Writer
 ## chapter
 def ch_kinkakuji(w: World):
     return w.chapter("金閣寺",
+            ## NOTE: episodes
+            ##  1.第一章
+            ##  2.第二章
+            ##  3.第三章
+            ##  4.第四章
             ## NOTE: サブストーリー
             ##  - 執筆が難航している
             ##  - サブストーリーについて教わる
@@ -31,6 +39,9 @@ def ch_kinkakuji(w: World):
             ##  - 先生が入院する
             ##  - 実際にあった事件を小説にしていた　（金閣寺
             ##  - 過去を振り返って告白する構造　（金閣寺
-            ep_main(w),
+            ep_chapter1(w),
+            ep_chapter2(w),
+            ep_chapter3(w),
+            ep_chapter4(w),
             note="執筆が難航する中、仕事で小説家として活躍する同級生と再会する沙奈。一方先生は体調を崩し、遂には入院してしまう",
             )

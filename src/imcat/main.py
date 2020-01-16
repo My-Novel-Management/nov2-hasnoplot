@@ -10,7 +10,10 @@ sys.path.append('storybuilder')
 from storybuilder.builder.world import World
 from storybuilder.builder.writer import Writer
 ## local files
-from imcat.episode import ep_main
+from imcat.catandbeer import ep_cat_and_beer
+from imcat.catandmaster import ep_cat_and_master
+from imcat.catandnovel import ep_cat_and_novel
+from imcat.catandpapers import ep_cat_and_manupapers
 
 
 ## define alias
@@ -20,6 +23,11 @@ W = Writer
 ## chapter
 def ch_Imacat(w: World):
     return w.chapter("吾輩は猫である",
+            ## NOTE:
+            ##  1.猫と先生
+            ##  2.猫と小説
+            ##  3.猫とビール
+            ##  4.猫と原稿
             ## NOTE: 起承転結
             ##  - 起承転結についての説明を受ける
             ##  - 物語（小説）について講義が始まる
@@ -29,10 +37,9 @@ def ch_Imacat(w: World):
             ##  - ラノベ界についての苦言（軽視　（吾輩は猫である
             ##  - だが資料として大量のラノベを、ビールを飲みながら読んでいた
             ##  - 最終的に「プロット」もないと言われた
-            ## NOTE:
-            ##  - 猫と主人
-            ##  - 猫と小説
-            ##  - 猫とビール
-            ep_main(w),
+            ep_cat_and_master(w),
+            ep_cat_and_novel(w),
+            ep_cat_and_beer(w),
+            ep_cat_and_manupapers(w),
             note="何とか先生から原稿を貰おうとする沙奈だったが、先生にプロットすらないと言われてしまった",
             )

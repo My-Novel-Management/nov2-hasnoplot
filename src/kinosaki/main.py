@@ -10,7 +10,10 @@ sys.path.append('storybuilder')
 from storybuilder.builder.world import World
 from storybuilder.builder.writer import Writer
 ## local files
-from kinosaki.episode import ep_main
+from kinosaki.atinn import ep_atinn
+from kinosaki.edgeindead import ep_edgeindead
+from kinosaki.insided import ep_insided
+from kinosaki.oldtalk import ep_oldtalk
 
 
 ## define alias
@@ -20,11 +23,19 @@ W = Writer
 ## chapter
 def ch_kinosaki(w: World):
     return w.chapter("城の崎にて",
+            ## NOTE: episodes
+            ##  1.旅の宿にて
+            ##  2.昔の話にて
+            ##  3.死の淵にて
+            ##  4.心の内にて
             ## NOTE: シーン
             ##  - シーンについての解説
             ##  - 事故エピソード（城の崎にて
             ##  - 様々な生き物が語りかけてくる（城の崎にて
             ##  - イモリエピソード（城の崎にて
-            ep_main(w),
+            ep_atinn(w),
+            ep_oldtalk(w),
+            ep_edgeindead(w),
+            ep_insided(w),
             note="先生に連れられ城之崎に慰安旅行にやってくる。そこで先生が小説を書けなくなったトラウマを知る",
             )

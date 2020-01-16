@@ -10,7 +10,10 @@ sys.path.append('storybuilder')
 from storybuilder.builder.world import World
 from storybuilder.builder.writer import Writer
 ## local files
-from yukiguni.episode import ep_main
+from yukiguni.nextstory import ep_nextstory
+from yukiguni.snowtale import ep_snowtale
+from yukiguni.sunset import ep_sunsetsight
+from yukiguni.temarisong import ep_temarisong
 
 
 ## define alias
@@ -20,6 +23,11 @@ W = Writer
 ## chapter
 def ch_yukiguni(w: World):
     return w.chapter("雪国",
+            ## NOTE: episodes
+            ##  1.夕景色
+            ##  2.手鞠歌
+            ##  3.雪国抄
+            ##  4.続雪国
             ## NOTE: 文章について
             ##  - 文章は基本を押さえているのがまず大事、などの説明
             ##  - 先生がいきなり実家に帰っていて、そこは雪国だった（北陸
@@ -33,6 +41,9 @@ def ch_yukiguni(w: World):
             ## NOTE:
             ##  - 雪国だった（先生の地元編
             ##  - 先生の旧知らしい大人の女性
-            ep_main(w),
+            ep_sunsetsight(w),
+            ep_temarisong(w),
+            ep_snowtale(w),
+            ep_nextstory(w),
             note="先生の実家（金沢）に連れてこられた沙奈。先生の旧知の人間から色々教わる。先生は長編を書く条件として沙奈も長編を書くことを約束させた",
             )

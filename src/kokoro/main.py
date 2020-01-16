@@ -10,7 +10,10 @@ sys.path.append('storybuilder')
 from storybuilder.builder.world import World
 from storybuilder.builder.writer import Writer
 ## local files
-from kokoro.episode import ep_main
+from kokoro.masterandletter import ep_master_and_letter
+from kokoro.masterandme import ep_master_and_me
+from kokoro.masterandparents import ep_master_and_parents
+from kokoro.parentsandme import ep_parents_and_me
 
 
 ## define alias
@@ -20,6 +23,11 @@ W = Writer
 ## chapter
 def ch_kokoro(w: World):
     return w.chapter("こころ",
+            ## NOTE: episodes
+            ##  1.先生と私
+            ##  2.私と両親
+            ##  3.先生と両親
+            ##  4.先生と手紙
             ## NOTE: キャラクター造形
             ##  - 台詞が固いことに思い悩む
             ##  - 人物造形について教わる
@@ -31,6 +39,9 @@ def ch_kokoro(w: World):
             ##  - 上：先生と私：外で偶然出会う（実は先生がストーカーしていただけ）／謎の墓参り（盗作した友人の
             ##  - 中：先生と親：父親が腎臓の病気／先生から手紙を貰う
             ##  - 下：先生と手紙：先生の友人についての告白
-            ep_main(w),
+            ep_master_and_me(w),
+            ep_parents_and_me(w),
+            ep_master_and_parents(w),
+            ep_master_and_letter(w),
             note="先生に送られた、自殺した親友の手紙を見つけ、先生のトラウマの正体を知る沙奈",
             )

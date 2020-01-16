@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Episode: 城の崎にて
+"""Episode: 6-2.昔の話にて／城の崎にて
 """
 ## path
 import os
@@ -17,15 +17,6 @@ _ = W.getWho()
 
 
 ## scenes
-def sc_main1(w: World):
-    sana, noto = W(w.sana), W(w.noto)
-    return w.scene("1.旅の宿にて",
-            sana.do("先生に連れてこられ、城の崎にやってくる"),
-            sana.talk("こっち初めてきました"),
-            noto.talk("この雰囲気が好きで、たまにくるんだ"),
-            noto.do("楽しそうに見て歩く"),
-            )
-
 def sc_main2(w: World):
     sana, noto = W(w.sana), W(w.noto)
     return w.scene("2.昔の話にて",
@@ -53,45 +44,9 @@ def sc_main2(w: World):
             ##  - 書店は1冊あたり２割の取り分があり、それが売上
             )
 
-def sc_main3(w: World):
-    sana, noto = W(w.sana), W(w.noto)
-    return w.scene("3.死の淵にて",
-            noto.talk("そしてその友人は亡くなってしまったんだ", "自分で首を吊ってね"),
-            sana.do("言葉を失う"),
-            noto.talk("その時に思ったよ",
-                "小説というのは人殺しの道具にもなるんだと", "作品そのものもだが、小説を書いたりする行為そのものも、人を苦しめる",
-                "$meは書くべきじゃなかった", "なのに今は作家をしている",
-                "そんな矛盾を抱え込んでいるのが人間なのかも知れない"),
-            sana.do("言いたいことは理解できたが、頷いていいのかどうか分からなかった"),
-            )
-
-def sc_main4(w: World):
-    sana, noto = W(w.sana), W(w.noto)
-    return w.scene("4.心の内にて",
-            noto.do("見せようと思ったはずの原稿を、$Sはゴミ箱に捨てた"),
-            sana.talk("どうして"),
-            noto.talk("こんなものはね、何にもならない",
-                "ただ手なりで書いただけの、文章の羅列だ",
-                "それを偉そうに君に見せて、これが小説だ、なんて語れはしない", "昔から$meはそんなつまらなくて卑屈な人間だと思い出した"),
-            sana.do("悲しそうに見えた"),
-            sana.think("けれど作家が一度破り捨てたものを拾ってまで本にしようとは思ってはいけない",
-                "作家とはプライドの塊なのだ", "それを担当編集は何よりも理解してあげなくてはならない",
-                "たとえ会社を敵に回しても", "そう言われたことを思い出す"),
-            sana.talk("わかりました", "でも、そうですね、$meも書きます",
-                "その代わり先生ももう一度挑戦して下さい", "納得がいくものができるまで待ちますから",
-                "それまでの穴埋めは$meが何とかします", "何とかしてみせます"),
-            sana.think("つい勢いで言ってしまったことを、後悔していた"),
-            sana.do("長編小説を書きながら唸る"),
-            sana.talk("$meには無理だ……"),
-            )
-
-
 ## episode
-def ep_main(w: World):
-    return w.episode("城の崎にて",
+def ep_oldtalk(w: World):
+    return w.episode("2.昔の話にて",
             ## NOTE
-            sc_main1(w),
             sc_main2(w),
-            sc_main3(w),
-            sc_main4(w),
             )

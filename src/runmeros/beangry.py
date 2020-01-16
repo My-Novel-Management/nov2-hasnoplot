@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Episode: 走れメロス
+"""Episode: 1-2.憤れ編集者／走れメロス
 """
 ## path
 import os
@@ -17,18 +17,6 @@ _ = W.getWho()
 
 
 ## scenes
-def sc_main1(w: World):
-    sana, noto = W(w.sana), W(w.noto)
-    return w.scene("1.走れ編集者",
-            sana.do("電車を降りて、小さな体で必死に駅構内を走っていく"),
-            sana.do("大きなカバンを二つも下げた小柄な女が走るのを、周囲はどう見ているだろう"),
-            sana.do("それでも必死だ"),
-            sana.do("そして転ぶ。ストッキングが破れる"),
-            sana.talk("ああ、もうつらーい"),
-            sana.think("トラックが迫ってきて、引かれたら異世界に行けるんだろうか、なんて考えたり"),
-            sana.think("王、と呼ばれる新編集長の顔を思い出す"),
-            )
-
 def sc_main2(w: World):
     sana, noto = W(w.sana), W(w.noto)
     fuka = W(w.fukaya)
@@ -51,34 +39,10 @@ def sc_main2(w: World):
             sana.talk("あーあ、前途多難だわ"),
             )
 
-def sc_main3(w: World):
-    sana, noto = W(w.sana), W(w.noto)
-    return w.scene("3.座れ編集者",
-            noto.talk("新しい編集か？　座れ"),
-            noto.do("笑みもなくすごむ"),
-            sana.do("ただただおそれ、どうしようと"),
-            sana.think("作家の言葉を尊重する",
-                "それが教えだった"),
-            sana.do("言われた通りに座る", "ストッキングの足で正座", "スカートで来なければよかったと"),
-            )
-
-def sc_main4(w: World):
-    sana, noto = W(w.sana), W(w.noto)
-    return w.scene("4.脱げ編集者",
-            sana.talk("な、何を……"),
-            noto.talk("だから脱げと言っているんだ",
-                "その上着だけじゃない", "まずは全部脱いで裸になってもらおう"),
-            sana.think("最悪だ、と思った"),
-            sana.think("先輩はちょっと癖があると言っていたけれど、ちょっとどころじゃない",
-                "これはＳランクだ", "最悪のＳだった"),
-            )
 
 ## episode
-def ep_main(w: World):
-    return w.episode("走れメロス",
+def ep_angryeditor(w: World):
+    return w.episode("2.憤れ編集者",
             ## NOTE
-            sc_main1(w),
             sc_main2(w),
-            sc_main3(w),
-            sc_main4(w),
             )

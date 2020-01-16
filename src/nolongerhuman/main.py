@@ -10,7 +10,10 @@ sys.path.append('storybuilder')
 from storybuilder.builder.world import World
 from storybuilder.builder.writer import Writer
 ## local files
-from nolongerhuman.episode import ep_main
+from nolongerhuman.firstnote import ep_firstnote
+from nolongerhuman.letter1 import ep_letter1
+from nolongerhuman.letter2 import ep_letter2
+from nolongerhuman.letter3 import ep_letter3
 
 
 ## define alias
@@ -20,6 +23,11 @@ W = Writer
 ## chapter
 def ch_nolongerhuman(w: World):
     return w.chapter("人間失格",
+            ## NOTE: episodes
+            ##  1.はしがき
+            ##  2.第一の手記
+            ##  3.第二の手記
+            ##  4.第三の手記
             ## NOTE: どんな駄作でも最後まで書く
             ##  - 自信喪失から書けなくなる
             ##  - 第一の手記：小学生の頃　（人間失格
@@ -39,6 +47,9 @@ def ch_nolongerhuman(w: World):
             ##  - 徹夜して何とか最後まで書き切る
             ## NOTE: sub
             ##  - 先生の
-            ep_main(w),
+            ep_firstnote(w),
+            ep_letter1(w),
+            ep_letter2(w),
+            ep_letter3(w),
             note="死にそうになりながらも何とか長編執筆を終えた沙奈に先生が病院から消えたとの一報が入る",
             )
