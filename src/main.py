@@ -23,6 +23,19 @@ from src.yukiguni.main import ch_yukiguni
 from src.substories.plagiarism import bk_plagiarism
 from src.substories.publish_longnovel import bk_longnovel
 from src.substories.publish_short import bk_shortnovel
+## settings
+from src.settings import asahi
+from src.settings import azumino
+from src.settings import fukaya
+from src.settings import gero
+from src.settings import king
+from src.settings import komi
+from src.settings import noto
+from src.settings import owase
+from src.settings import sana
+from src.settings import tsuru
+from src.settings import stages
+
 
 ## NOTE:
 #   1. 走れメロス       アイデア        企画        異動、先生との出会い
@@ -47,10 +60,20 @@ def create_world():
     w.buildDB(PERSONS,
             STAGES, DAYS, TIMES, ITEMS, WORDS,
             RUBIS, LAYERS)
-    w.setBaseDate(2020)
-    # set textures
-    # set history
-    # set lifenote
+    w.setBaseDate(2017)
+    # set persons
+    asahi.set_person(w)
+    azumino.set_person(w)
+    fukaya.set_person(w)
+    gero.set_person(w)
+    king.set_person(w)
+    komi.set_person(w)
+    noto.set_person(w)
+    owase.set_person(w)
+    sana.set_person(w)
+    tsuru.set_person(w)
+    # set stages
+    stages.set_stages(w)
     # set block
     w.entryBlock(
             *bk_plagiarism(w),
