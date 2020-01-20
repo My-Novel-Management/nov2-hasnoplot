@@ -17,25 +17,50 @@ _ = W.getWho()
 
 
 ## scenes
-def sc_main1(w: World):
+def sc_cannot(w: World):
     sana, noto = W(w.sana), W(w.noto)
-    return w.scene("1.猫と先生",
-            sana.talk("嫌です"),
-            sana.explain("突然脱げと言われたが、$Sはそれをすぐに断った"),
-            noto.talk("君の仕事は何？"),
-            sana.talk("先生の担当編集です", "先生が良い作品を書いて本にできるようにお手伝いと橋渡しをする仕事です"),
-            noto.talk("じゃあ脱ぐべきだな",
-                "君が脱ぐことで$meは作品を書くことができる", "もし脱がなければ原稿は永遠に完成しない"),
-            sana.think("面倒な作家が現れた"),
-            sana.explain("なんとかいいすくめて、脱がなくて済ませる"),
-            sana.do("足元に猫がやってきて、いつく"),
-            noto.talk("へえ。そいつは人にあまり興味を示さないので有名なんだが、なるほどね"),
+    return w.scene("脱ぎません",
+            sana.talk("いやです。脱ぎません"),
+            noto.talk("そう。じゃあ、出ていっていいよ"),
+            sana.think("これくらいではへこたれないと気合を入れて"),
+            sana.talk("本日より$fukayaの担当を引き継いで先生の編集になりました$full_sanaです"),
+            noto.talk("何も聞いていないんだが"),
+            sana.explain("体調を崩して産休を早めに取得することになった都合を説明"),
+            noto.talk("ああ、そういえば来年出産だったね。それは大事にしてもらいたい"),
+            sana.talk("で、その代役が$meです"),
+            noto.talk("ベテランには見えないけど、経験は？"),
+            sana.talk("別の編プロにいたんで、月刊誌を一年ばかり。こっちはまだ一月ちょっとですね"),
+            noto.talk("そうか。つまり、$meはその程度でいいと、そういう判断だね？"),
+            sana.talk("どういうことですか？"),
+            noto.talk("そのままさ"),
+            noto.talk("編集にも格というものがある。やはり大事にしたい作家にはそれなりの担当がつくものだよ"),
+            sana.talk("先生は一般文芸だから分からないでしょうけれど、ライトノベルの方では編集一人が何人も担当することが普通で、"),
+            _.talk("また入れ替わりも激しいんで、そこまで気を回してられないのが現状なんですよ"),
+            noto.talk("それはそっちの事情だろう"),
+            sana.do("引き継ぎ用に先輩に作ってもらった資料を見せて"),
+            sana.talk("本来なら一緒に$fukayaも来ることになっていたんですが、急に体調を崩して。それで$meだけで参りました"),
+            sana.talk("何か気に障りましたら、担当変えなども考えますが"),
+            sana.do("黒猫がやってきて"),
+            sana.talk("きゃっ"),
+            noto.talk("へえ、珍しい。その子なかなか他人になつかないのよ"),
+            sana.talk("ね、猫かってるんですか？"),
+            sana.talk("$me、ちょっと苦手で"),
+            sana.do("だが胸元にやたらとすり寄ってくる"),
+            sana.talk("ちょ、ちょっと"),
+            noto.talk("そいつ、名前はマダナイね"),
+            sana.talk("名前ないのか"),
+            noto.talk("いや、マダナイ君。そして$meの飼い猫ではなくて、いつも勝手にやってきてくつろいでいく。たぶん野良猫ではないと思うけど"),
+            sana.do("首輪を見て"),
+            sana.talk("何も書いてませんね"),
+            noto.talk("しかしそいつが興味を示したということは、実に興味深い"),
+            camera=w.sana,
+            stage=w.on_hisapart,
+            day=w.in_firstmeet, time=w.at_afternoon,
             )
-
 
 ## episode
 def ep_cat_and_master(w: World):
     return w.episode("1.猫と先生",
             ## NOTE
-            sc_main1(w),
+            sc_cannot(w),
             )

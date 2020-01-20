@@ -11,8 +11,8 @@ from storybuilder.builder.world import World
 from storybuilder.builder.writer import Writer
 ## local files
 from runmeros.beangry import ep_angryeditor
+from runmeros.hurryup import ep_hurryeditor
 from runmeros.running import ep_runeditor
-from runmeros.sitdown import ep_sitdowneditor
 from runmeros.takeoff import ep_takeoffeditor
 
 
@@ -26,7 +26,7 @@ def ch_runmeros(w: World):
             ## NOTE: episodes
             ##  1.走れ編集者
             ##  2.憤れ編集者
-            ##  3.座れ編集者
+            ##  3.急げ編集者
             ##  4.脱げ編集者
             ## NOTE: アイデア出し
             ##  - 先輩が産休になり、急遽代役として編集部に異動してくる
@@ -36,7 +36,7 @@ def ch_runmeros(w: World):
             ##  - 先生に何とか出会うがいきなり「脱げ」と言われた
             ep_runeditor(w),
             ep_angryeditor(w),
-            ep_sitdowneditor(w),
+            ep_hurryeditor(w),
             ep_takeoffeditor(w),
             note="産休の先輩の穴を埋めるべく書籍編集部に異動になった沙奈。だが彼女を待っていたのは地獄のような編集者人生だった",
             )

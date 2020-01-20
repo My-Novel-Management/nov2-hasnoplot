@@ -17,28 +17,41 @@ _ = W.getWho()
 
 
 ## scenes
-def sc_main4(w: World):
+def sc_havenoplot(w: World):
     sana, noto = W(w.sana), W(w.noto)
-    return w.scene("4.猫と原稿",
-            sana.talk("今、なんて？"),
-            noto.talk("だからないと言ったんだ", "プロットすらないよ"),
-            sana.talk("嘘ですよね？"),
-            noto.talk("$meは小説の中以外での嘘が嫌いでね"),
-            sana.talk("プロットもないんですか？　ほんとに？"),
-            sana.think("激しく混乱する"),
-            sana.explain("今日原稿（初稿）をもらう手はずになっていると先輩からは聞いていた"),
-            sana.talk("ちょっと確認します"),
-            sana.do("電話する"),
-            sana.talk("あの、先輩、今先生の家なんですけど"),
-            sana.explain("そういうところがあるから気をつけて、がんばって原稿むしり取ってきてね、と笑われる"),
-            sana.talk("探します"),
-            noto.talk("だからないんだって"),
-            sana.think("$Sは絶対に原稿を探し出すと決意した"),
+    fukaya = W(w.fukaya)
+    return w.scene("プロットはない",
+            noto.talk("ああ、だからないよ", "原稿どころかプロットもない"),
+            sana.talk("え"),
+            sana.do("慌てて自分の手帳を確かめる"),
+            sana.talk("あの先生、$meは今日先輩から原稿をもらってくるように頼まれているんです。わかりますか？"),
+            noto.talk("先輩というのは$fukayaさんのこと？"),
+            sana.talk("そうです"),
+            noto.talk("ないよ。それにそんな約束したかなあ"),
+            sana.talk("いやいや、ここに書いてありますよ！"),
+            sana.do("引き継ぎ資料を見せて"),
+            noto.talk("ああ、確かにこの可愛らしい書き込みは彼女だね"),
+            _.talk("しかし困ったなあ。ほんとに何もないよ。とにかくまだ資料を読んでいる段階でね"),
+            _.do("手にしているのは猫の写真集だ"),
+            sana.talk("ほんとに？"),
+            sana.talk("あの、確認します"),
+            sana.do("$fukayaに連絡する"),
+            fukaya.voice("ああ、そうきたか。先生あれこれ理由つけてなかなか書かないから、がんばって！"),
+            sana.talk("がんばってじゃないです！"),
+            sana.talk("本当にないんですか？　メモくらいは"),
+            noto.talk("探してみる？"),
+            noto.do("部屋を見ると、すごく散らかっていた。寝室も、キッチンも"),
+            noto.talk("最近$fukayaさん忙しくてなかなか顔出してくれなかったからねえ"),
+            sana.think("編集は家政婦じゃないし"),
+            sana.think("最悪中の最悪だと認定した"),
+            camera=w.sana,
+            stage=w.on_hisapart,
+            day=w.in_firstmeet, time=w.at_afternoon,
             )
 
 ## episode
 def ep_cat_and_manupapers(w: World):
     return w.episode("4.猫と原稿",
             ## NOTE
-            sc_main4(w),
+            sc_havenoplot(w),
             )
