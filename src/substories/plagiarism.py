@@ -21,6 +21,10 @@ _ = W.getWho()
 def bk_plagiarism(w: World):
     sana, noto = W(w.sana), W(w.noto)
     return (
+            w.block("盗作ニュース１",
+                sana.do("スマホのニュースを見ていると、そこに盗撮騒動の話が流れてくる"),
+                sana.talk("え？　これって"),
+            ),
             w.block("盗作騒動1",
                 sana.explain("#盗作騒動で出版予定だった本がポシャる"),
             ),

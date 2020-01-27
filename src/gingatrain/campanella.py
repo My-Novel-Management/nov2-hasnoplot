@@ -22,7 +22,13 @@ def sc_whereishe(w: World):
     tsuchi = W(w.tsuchiura)
     return w.scene("先生はどこへ？",
             w.comment("バイト君から先生失踪の報を受けた沙奈"),
-            sana.talk("え？　ちょっと分からない", "どうして先生が病院から消えるの？", "何かのミステリ？"),
+            ## NOTE:
+            ##  冒頭文：ではみなさんは、そういうふうに川だと言われたり、乳の流れたあとだと言われたりしていた
+            sana.voice("ジョバンニさん。あなたはわかっているのでしょう"),
+            sana.hear("そんな声が頭の中に降ってきた"),
+            sana.be("スマホを手に固まっている"),
+            _.think("酷く混乱していた"),
+            sana.talk("え？　ちょっとどういうことなの？", "どうして先生が病院から消えるの？", "何かのミステリ？"),
             tsuchi.voice("$meだって分かりませんよ",
                 "朝来たら看護師さんが騒いでて", "とてもあんな火傷で出歩いていいもんじゃないって"),
             sana.talk("とにかく今からそっち行くから近所探しててて！"),
@@ -42,6 +48,7 @@ def sc_investigation(w: World):
     return w.scene("先生の捜索",
             sana.come("病院にやってくる"),
             sana.talk("あ、いた。ね、見つかった？"),
+            tsuchi.be("ロビィでうろうろしている"),
             tsuchi.talk("それがあの先生、窓から出てったんですよ！"),
             sana.talk("は？"),
             sana.explain("説明を受けると、個室のカーテンを結んで三階から中庭に降りて、そこからタクシーで出て行ったというのだ"),
@@ -60,9 +67,12 @@ def sc_investigation(w: World):
 def sc_anywhere(w: World):
     sana, noto = W(w.sana), W(w.noto)
     tsuchi = W(w.tsuchiura)
+    chiyo = W(w.chiyoda)
     return w.scene("どこにもいない",
             sana.come("行きつけの喫茶店にやってくる"),
+            chiyo.be("掃除をしている"),
             sana.talk("あの、先生来てませんか？"),
+            chiyo.talk("最近見てないわ。入院したって聞いたけどぉ？"),
             sana.explain("簡単に説明して、何か手がかりがないか訊いてみるが、分からないとのことだった"),
             sana.talk("ほんと、もう！"),
             stage=w.on_mastercafe,
@@ -70,18 +80,28 @@ def sc_anywhere(w: World):
 
 def sc_accident(w: World):
     sana, noto = W(w.sana), W(w.noto)
-    tsuchi = W(w.tsuchiura)
+    tsuchi, fukaya = W(w.tsuchiura), W(w.fukaya)
+    utsu = W(w.utsu)
     return w.scene("人身事故報道",
             sana.come("やや苦手なバーにやってくる"),
+            utsu.be("グラスを磨いている"),
             sana.talk("すみません、先生探してるんですが"),
+            utsu.talk("また逃げられたんでしょうか"),
+            sana.talk("そうじゃないんですけど、そうでもあるんです"),
+            utsu.look("苦笑している"),
             sana.explain("だが何も分からないまま"),
             sana.explain("そこにテレビでちょうど中央線の人身事故報道"),
             sana.talk("え？"),
             sana.explain("ちょうど年齢や背格好が同じに"),
             sana.do("そこに$fukayaから連絡"),
-            sana.talk("はい",
-                "え？", "玉川上水？",
-                "でも先生が自殺だなんて", "そもそもあそこってそんな水流れてましたっけ？"),
+            fukaya.voice("先生見つかった？"),
+            sana.talk("いえ、まだです"),
+            fukaya.voice("そっか。今日、なのよね"),
+            sana.talk("何がですか？"),
+            fukaya.voice("ちょっと気になることがあって"),
+            sana.talk("はい","え？", "玉川上水？"),
+            fukaya.voice("$meが行ってあげられたらいいんだけど、もしもの時は$sana、お願いね"),
+            sana.think("先生にまさかはないと思いたい。でも自殺しないとは断言できなかった"),
             stage=w.on_masterbar,
             )
 
@@ -102,6 +122,7 @@ def sc_hurry(w: World):
     tsuchi = W(w.tsuchiura)
     return w.scene("急げ",
             w.comment("沙奈はある場所に急いだ"),
+            sana.be("運転席で慌てた様子でいる"),
             sana.do("車である場所に急いだ"),
             sana.think("お願い、間に合って"),
             sana.do("やがて見えてくる"),

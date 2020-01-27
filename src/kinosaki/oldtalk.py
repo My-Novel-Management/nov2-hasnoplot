@@ -109,7 +109,7 @@ def sc_oldtalk(w: World):
     sana, noto = W(w.sana), W(w.noto)
     return w.scene("昔話",
             noto.talk("君が酔っているこんな時だから、言うんだが"),
-            _.talk("$meはね、かつて人を殺したことがある"),
+            _.talk("$meは昔、人殺しをした。それも大切な人を二人もだ"),
             )
 
 ## episode

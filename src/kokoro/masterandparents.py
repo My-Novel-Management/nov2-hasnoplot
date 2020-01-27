@@ -20,11 +20,22 @@ _ = W.getWho()
 def sc_riverside(w: World):
     sana, noto = W(w.sana), W(w.noto)
     return w.scene("川沿いを",
-            sana.do("先生に連れ出され、歩いていた"),
+            sana.be("食後、先生に連れ出され、歩いていた"),
+            noto.be("$sanaの少し前を歩く"),
+            noto.look("着ている着物の裾が揺れる"),
             sana.explain("玉川上水は太宰治が心中したので有名な場所だ"),
             sana.explain("駅から井の頭公園までの散策路は今でも多くの人に愛されている"),
-            noto.talk("少しだけ話しておこう"),
-            noto.talk("これは作家としての資質"),
+            noto.talk("小説を書くという行為は究極、人間を描くことになる"),
+            sana.think("今日はいつになく饒舌だ、と感じる"),
+            noto.do("すれ違う人を見てはああだこうだと"),
+            noto.talk("どんな人物を置いても構わない。ただね、どうしても作劇上のバランスというものはある"),
+            _.talk("例えば男ばかりだとか、若い人間ばかりだとか、老人ばかりだとか"),
+            _.talk("それがその作品の世界観ならいいが、偏りを作るほど現実からはほど遠くなる"),
+            _.talk("現実感が薄れるということは、それだけ人離れが起きる要因となる"),
+            _.talk("先程も話したように、全員に受けるものというのはつまらない。そうなる運命なんだ"),
+            _.talk("誰の心にも刺さらないものこそが全員に受けるということだから"),
+            _.talk("どんな人物を置いて、どんな風にやり取りをするのか"),
+            _.talk("そこには作者の目線や感性が現れる"),
             camera=w.sana,
             stage=w.on_tamagawariver,
             day=w.in_visitgrave, time=w.at_afternoon,
@@ -34,6 +45,8 @@ def sc_treasure_friend(w: World):
     sana, noto = W(w.sana), W(w.noto)
     return w.scene("友を大切に",
             sana.come("先生と井の頭公園まで歩く"),
+            noto.be("歩きながら語っている"),
+            sana.be("それに相槌を打ちながらついて歩く"),
             noto.talk("ここをよく歩くんだ。文豪たちも同じ気持ちだったのかな、なんて考える訳じゃないが、それでも同じような空気を吸っていれば偉くなれる気がする"),
             noto.do("表情が柔らかい"),
             noto.think("昔のことを思い出している"),
@@ -53,7 +66,7 @@ def sc_treasure_friend(w: World):
 
 ## episode
 def ep_master_and_parents(w: World):
-    return w.episode("3.先生と友人",
+    return w.episode("3.下　先生と友人",
             ## NOTE
             sc_riverside(w),
             sc_treasure_friend(w),

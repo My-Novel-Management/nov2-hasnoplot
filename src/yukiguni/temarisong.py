@@ -63,6 +63,16 @@ def sc_unknownthings(w: World):
             sana.think("先生の鼻歌で聞いたことがある、と思い出す"),
             noto.talk("昔、いろいろとあってね。まあ何を言われたかしらないが、気にしないことだ"),
             noto.do("不機嫌な顔"),
+            ## パーティに出て、不穏なことを言われて、日帰りで東京に戻る
+            )
+
+def sc_backtohome(w: World):
+    sana, noto = W(w.sana), W(w.noto)
+    tsuru, komi, asahi = W(w.tsuru), W(w.komi), W(w.asahi)
+    return w.scene("帰りの車内で",
+            sana.be("帰りの車内"),
+            stage=w.on_train,
+            time=w.at_night,
             )
 
 ## episode
@@ -71,4 +81,5 @@ def ep_temarisong(w: World):
             ## NOTE
             sc_lunch(w),
             sc_unknownthings(w),
+            sc_backtohome(w),
             )

@@ -48,9 +48,18 @@ def sc_writerwill(w: World):
             day=w.in_deadline_short, time=w.at_night,
             )
 
-def sc_masterpaper(w: World):
+def sc_lonleyroad(w: World):
     sana, noto = W(w.sana), W(w.noto)
-    return w.scene("先生の原稿",
+    return w.scene("寂しい帰路",
+            sana.be("一人暗い夜道を歩いている"),
+            sana.look("目元が赤い。涙の跡だ"),
+            sana.think("結局先生の原稿は貰えなかった"),
+            _.think("自分の、編集としての浅はかさ、物足りなさが見透かされた"),
+            _.think("大事な原稿は預けられない、と言われた"),
+            _.think("そんなことにはならないと思いこんでいたので、ショックが大きい"),
+            sana.talk("$meは、どこかで小説をバカにしていたんだ"),
+            stage=w.on_street,
+            time=w.at_night,
             )
 
 def sc_sadreport(w: World):
@@ -71,6 +80,6 @@ def ep_lemon(w: World):
     return w.episode("3.檸檬",
             ## NOTE
             sc_writerwill(w),
-            sc_masterpaper(w),
+            sc_lonleyroad(w),
             sc_sadreport(w),
             )

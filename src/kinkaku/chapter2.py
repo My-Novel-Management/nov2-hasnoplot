@@ -23,28 +23,49 @@ def sc_threatening(w: World):
             sana.come("様子を見にやってくる"),
             sana.talk("またいっぱい詰め込んで……あれ、これ何だろ。痛っ"),
             sana.do("指を切る"),
-            sana.think("例のあれだ、と思った"),
-            sana.do("中身は脅迫状で、盗作をばらされたくなければ金を支払えというもの"),
+            _.do("それはとても古典的ないやがらせレターだった。中にカミソリの刃が入っている"),
+            sana.think("こんなものを知っているのは先生とそう大差ない世代の大人だろうと思った"),
+            sana.do("一応注意して中身を確認する"),
+            sana.do("中に入っていたのは脅迫状で、盗作をばらされたくなければ金を支払えというもの"),
             sana.think("流石に相談すべきかと考える"),
+            noto.talk("入ってこないけど、何かあった？"),
             noto.talk("どうしたの？　血が出てるじゃないか"),
-            noto.do("先生が、不器用だが、手当してくれる"),
-            sana.do("分厚く巻かれた包帯に苦笑"),
-            sana.talk("先生、これなんですが"),
-            sana.do("封筒を見せる"),
-            noto.talk("ああ、またか"),
-            sana.talk("以前にも？"),
-            noto.talk("ワープロの文字だが、その文章の句読点の癖がね、彼のものなんだよ"),
-            noto.talk("ここでは何だから、外に出て話そうか。そうだ、ついでに夕食にしよう。ワインが飲みたかった"),
+            noto.talk("とにかく入りなさい"),
             camera=w.sana,
             stage=w.on_hisapart,
             day=w.in_threaten2, time=w.at_afternoon,
             )
 
+def sc_talkaboutthreaten(w: World):
+    sana, noto = W(w.sana), W(w.noto)
+    return w.scene("脅迫状について",
+            sana.be("手に包帯が巻かれている"),
+            noto.come("戻ってきて"),
+            noto.talk("上手いもんだろう？"),
+            sana.do("大きな蝶々結びを見て苦笑する"),
+            noto.talk("なんだい。せっかく手当をしたのにそれはないだろう？"),
+            sana.talk("本当に小説以外は何もできないんだなって"),
+            noto.talk("そうだよ。作家に小説以外を求める今の風潮は間違っている、と断固言いたいね"),
+            sana.think("同感だった"),
+            sana.talk("ところで先生、この脅迫状なんですけど"),
+            sana.do("封筒を見せる"),
+            noto.talk("ああ、またか"),
+            sana.talk("以前にも？"),
+            noto.talk("ワープロの文字だが、その文章の句読点の癖がね、彼のものなんだよ"),
+            sana.talk("彼？"),
+            noto.talk("ここでは何だから、外に出て話そうか。そうだ、ついでに夕食にしよう。ワインが飲みたかった"),
+            sana.think("どうやら先生には犯人の目星がついているようだ"),
+            stage=w.on_hisapart_int,
+            )
+
 def sc_pulils(w: World):
     sana, noto = W(w.sana), W(w.noto)
+    utsu = W(w.utsu)
     return w.scene("弟子について",
             sana.come("先生に連れられてやってくる"),
-            sana.do("$Sが苦手な店主のバーだ"),
+            utsu.be("グラスを磨いている"),
+            sana.do("軽く会釈して挨拶する"),
+            _.think("苦手だな、と感じる"),
             noto.talk("こういう場所はね、内緒の話をするのに使うんだよ。それにここのナポリタンが上手くてね"),
             noto.do("注文する"),
             sana.explain("昔ながらの洋食が好きな先生。基本的に子ども舌だった"),
@@ -98,6 +119,7 @@ def ep_chapter2(w: World):
     return w.episode("2.第二章",
             ## NOTE
             sc_threatening(w),
+            sc_talkaboutthreaten(w),
             sc_pulils(w),
             sc_abouttrust(w),
             )

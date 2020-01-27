@@ -17,16 +17,61 @@ _ = W.getWho()
 
 
 ## scenes
+def sc_hurrygirl(w: World):
+    sana, noto = W(w.sana), W(w.noto)
+    gero, azu = W(w.gero), W(w.azumino)
+    return w.scene("急げ編集",
+            w.comment("１話の冒頭オマージュ"),
+            sana.be("着替えている"),
+            sana.explain("徹夜で$geroの相手をしていて遅刻しそうに"),
+            gero.talk("だからエンディングまで長いよって言ったんだがね"),
+            sana.talk("長いっていっても本当に明け方まで掛かると思わなかったから！"),
+            _.explain("最近流行っている悪役令嬢ものの勉強と、乙女ゲームを教えてもらっていたのだ"),
+            azu.come("小さな弁当を持ってやってくる"),
+            azu.talk("会社で食べてね"),
+            sana.have("弁当を受け取る"),
+            sana.do("着替え終わり"),
+            sana.talk("それじゃ、今夜は焼き肉奢るからね！　いってきます！"),
+            gero.talk("おう、期待しないで待っとく"),
+            azu.talk("気をつけてね"),
+            sana.go("出かける"),
+            camera=w.sana,
+            stage=w.on_herhouse_int,
+            day=w.in_getfirstbook, time=w.at_midmorning,
+            )
+
+def sc_runninggirl(w: World):
+    sana, noto = W(w.sana), W(w.noto)
+    return w.scene("走れ編集",
+            sana.do("走っている"),
+            _.do("横断歩道で駆け足"),
+            stage=w.on_street,
+            )
+
 def sc_firstbook(w: World):
     sana, noto = W(w.sana), W(w.noto)
-    king, nira = W(w.king), W(w.nirasaki)
+    king, nira, tsuchi = W(w.king), W(w.nirasaki), W(w.tsuchiura)
     return w.scene("先生の本",
             w.comment("初めての$sana担当での先生の製本された本を手にして"),
+            ## NOTE
+            ##  文芸部の面々を出しておく
+            ##  深谷さん出産情報も追記
+            ##  放火犯の情報も
+            sana.come("出社してくる"),
+            sana.look("嬉しそう"),
+            _.think("今朝もらった$fukaya出産の連絡を思い出し", "#深谷出産"),
+            nira.be("パソコンに向かっている"),
+            tsuchi.be("椅子を並べて寝ている"),
+            king.be("座ってコーヒーを飲んでいる"),
+            nira.do("ちらっと見て"),
             sana.do("自分のデスクに製本された先生の本を見つける"),
             _.talk("え？　これって"),
             nira.talk("印刷所の何とかってやつが朝一で持ってきてくれたよ"),
             sana.talk("ありがとうございます"),
             nira.talk("$meは何もしてねえよ"),
+            _.talk("それより$noseの奴、出頭したそうだ。よかった"),
+            sana.talk("そうなんですか。ほっとしました"),
+            _.think("罪を償って、今度こそ本当に自分の作品を書いてもらいたい"),
             sana.do("本の出来を確かめつつ"),
             sana.do("編集長のところに行き"),
             sana.talk("先生のところに持っていってもいいですか？"),
@@ -36,7 +81,6 @@ def sc_firstbook(w: World):
             sana.go("鞄を手に、社用車の鍵を手に、出かける"),
             camera=w.sana,
             stage=w.on_heroffice,
-            day=w.in_getfirstbook, time=w.at_afternoon,
             )
 
 def sc_gotomaster(w: World):
@@ -93,6 +137,8 @@ def sc_nextbook(w: World):
 def ep_epilogue(w: World):
     return w.episode("4.エピローグ",
             ## NOTE
+            sc_hurrygirl(w),
+            sc_runninggirl(w),
             sc_firstbook(w),
             sc_gotomaster(w),
             sc_nextbook(w),

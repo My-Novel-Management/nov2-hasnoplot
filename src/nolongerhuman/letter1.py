@@ -17,22 +17,50 @@ _ = W.getWho()
 
 
 ## scenes
-def sc_getletter(w: World):
+def sc_magazinewriter(w: World):
     sana, noto = W(w.sana), W(w.noto)
-    nira = W(w.nirasaki)
-    return w.scene("手紙を手に入れてしまって",
-            sana.do("こっそり取っておいた先生のノートをどうしようと考え込む"),
-            nira.talk("どうしたんだよ。それより先生の原稿燃えたんだろ？　もう流石に駄目なんじゃね？"),
-            sana.talk("原稿どころじゃないわよ"),
-            nira.talk("まあ、色々いわくつきだったから、これを教訓にもっとマシな作家担当しろよ"),
-            sana.talk("マシな作家ね……"),
-            sana.think("雑誌編集時代を思い返して"),
-            sana.do("仕事に戻る"),
-            sana.do("バイト君から朝の定時連絡を受けて"),
-            sana.talk("まだ集中治療室か"),
+    yuzawa = W(w.yuzawa)
+    return w.scene("雑誌記者",
+            sana.come("先生の見舞いを終えた$Sが病院から出てくる"),
+            yuzawa.come("それを待ち構えていたカメラを担いだ記者がやってきて"),
+            yuzawa.talk("$noto先生の担当編集の方ですね？"),
+            sana.talk("やっぱりあなただったんですね"),
             camera=w.sana,
-            stage=w.on_heroffice,
-            day=w.in_aftergetletter, time=w.at_midmorning,
+            stage=w.on_hospital_ext,
+            )
+
+def sc_writertalk(w: World):
+    sana, noto = W(w.sana), W(w.noto)
+    yuzawa = W(w.yuzawa)
+    return w.scene("記者の話",
+            sana.be("近所のファミレスに入り、対面で座っている"),
+            yuzawa.be(),
+            yuzawa.do("注文した大盛りのスパゲティを前に"),
+            yuzawa.talk("集中治療室で全治三ヶ月。結構な火傷でしたね。なんでも放火っていう話ですが"),
+            sana.talk("警察の方から、そういう可能性もあると聞いてます"),
+            yuzawa.talk("原稿も焼けて大変だとか"),
+            sana.talk("どこで？"),
+            yuzawa.talk("こっちも商売ですからね、出処は教えられませんよ。けど、まあ色々ツテはありますしね"),
+            _.talk("それよりも、ネットニュースは見られました？"),
+            sana.talk("なんですか盗作って。今度はうちを狙ってるんですか？"),
+            yuzawa.talk("世間は今盗作に目が厳しくなってます。盗作ってのはいけないことだ"),
+            _.talk("元の作者の権利を侵害する酷い行為だ。そう思いませんか？"),
+            sana.talk("先生は盗作なんてしてません"),
+            yuzawa.talk("はい、言質とったよ"),
+            _.do("ボイスレコーダを見せる"),
+            sana.talk("知ってますか。そういうのって証拠能力がないんですよ"),
+            yuzawa.talk("肝が座ってるなあ"),
+            _.talk("こっちはね、証拠をちゃんと持ってるんですよ"),
+            sana.talk("何が証拠になるっていうんです？"),
+            yuzawa.talk("$full_tsuru、知ってますね？"),
+            sana.do("黙り込む"),
+            yuzawa.talk("先生のデビュー作が、彼の盗作だって告発文書があるの、知ってますか？"),
+            sana.think("先生が見せてくれた遺書のことだろう"),
+            yuzawa.talk("編集ならもっと担当作家のこと、調べておいた方が良いですよ"),
+            sana.talk("作家を信頼するのも、編集の仕事ですから。失礼します"),
+            yuzawa.talk("そこまで言うなら、後で良いものをお送りしますよ。楽しみにしてて下さい"),
+            sana.go("行ってしまう"),
+            stage=w.on_famires_int,
             )
 
 def sc_mynovel(w: World):
@@ -71,7 +99,8 @@ def sc_masterletter(w: World):
 def ep_letter1(w: World):
     return w.episode("2.第一の手記",
             ## NOTE
-            sc_getletter(w),
+            sc_magazinewriter(w),
+            sc_writertalk(w),
             sc_mynovel(w),
             sc_masterletter(w),
             )
