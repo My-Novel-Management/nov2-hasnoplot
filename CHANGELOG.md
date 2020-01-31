@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.3.2] - 2020-01-31
+### Added
+- LO
+### Updated
+- storybuilder: v0.4.5-7
+
 ## [0.3.1] - 2020-01-27
 ### Updated
 - storybuilder: v0.4.3-27
@@ -25,7 +31,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - This CHANGELOG file to hopefully serve as an evolving example of a standardized open source project CHANGELOG.
 - README one line implemented.
 
-[Unreleased]: https://github.com/My-Novel-Management/nov2-hasnoplot/compare/v0.3.1...HEAD
+[Unreleased]: https://github.com/My-Novel-Management/nov2-hasnoplot/compare/v0.3.2...HEAD
+[0.3.2]: https://github.com/My-Novel-Management/nov2-hasnoplot/releases/v0.3.2
 [0.3.1]: https://github.com/My-Novel-Management/nov2-hasnoplot/releases/v0.3.1
 [0.3.0]: https://github.com/My-Novel-Management/nov2-hasnoplot/releases/v0.3.0
 [0.2.0]: https://github.com/My-Novel-Management/nov2-hasnoplot/releases/v0.2.0
