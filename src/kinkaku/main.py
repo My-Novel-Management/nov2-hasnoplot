@@ -10,10 +10,10 @@ sys.path.append('storybuilder')
 from storybuilder.builder.world import World
 from storybuilder.builder.writer import Writer
 ## local files
-from kinkaku.chapter1 import ep_chapter1
-from kinkaku.chapter2 import ep_chapter2
-from kinkaku.chapter3 import ep_chapter3
-from kinkaku.chapter4 import ep_chapter4
+from kinkaku.e1_chapter1 import ep_chapter1
+from kinkaku.e2_chapter2 import ep_chapter2
+from kinkaku.e3_chapter3 import ep_chapter3
+from kinkaku.e4_chapter4 import ep_chapter4
 
 
 ## define alias

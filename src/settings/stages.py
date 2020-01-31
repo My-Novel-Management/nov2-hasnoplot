@@ -19,24 +19,7 @@ _ = W.getWho()
 
 ## setting stages
 def set_stages(w: World):
-    w.setTexture("on_hercampany_int",
-            [
-                "内装", "事務机が整然と並ぶ",
-                "壁", "クリーム色",
-                ])
-    w.setTexture("on_hercampany_ext",
-            [
-                "立地", "オフィス街のビルが並ぶ中",
-                ])
-    w.setTexture("on_herhouse_int",
-            [
-                "間取り", "３ＬＤＫ、３人で洋間をそれぞれの寝室に",
-                "家賃", "10万／月",
-                "階数", "三階／三階建て（エレベータなし）",
-                ])
-    w.setTexture("on_hisapart_int",
-            [
-                "間取り", "１ＬＤＫ、和室を寝室に、Ｌは仕事場",
-                "家賃", "10万／月",
-                "階数", "一階／二階建て",
-                ])
+    w.setTexture("on_hercampany_int", "事務机が整然と並び、パーテーションで区切られている")
+    w.setTexture("on_hercampany_ext", "オフィス街のビルが並ぶ中にある")
+    w.setTexture("on_herhouse", "３LDKで洋間をそれぞれの居室にしている。家賃10万。三階建ての三階")
+    w.setTexture("on_hisapart", "１LDKで和室を寝室にしている。家賃10万。二階建ての一階")

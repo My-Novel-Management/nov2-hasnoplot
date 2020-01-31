@@ -10,10 +10,10 @@ sys.path.append('storybuilder')
 from storybuilder.builder.world import World
 from storybuilder.builder.writer import Writer
 ## local files
-from nolongerhuman.firstnote import ep_firstnote
-from nolongerhuman.letter1 import ep_letter1
-from nolongerhuman.letter2 import ep_letter2
-from nolongerhuman.letter3 import ep_letter3
+from nolongerhuman.e1_firstnote import ep_firstnote
+from nolongerhuman.e2_letter1 import ep_letter1
+from nolongerhuman.e3_letter2 import ep_letter2
+from nolongerhuman.e4_letter3 import ep_letter3
 
 
 ## define alias

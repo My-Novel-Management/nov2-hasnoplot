@@ -10,10 +10,10 @@ sys.path.append('storybuilder')
 from storybuilder.builder.world import World
 from storybuilder.builder.writer import Writer
 ## local files
-from lemon.lemon import ep_lemon
-from lemon.orange import ep_orange
-from lemon.pear import ep_pear
-from lemon.pomegranate import ep_pomegranate
+from lemon.e1_pear import ep_pear
+from lemon.e2_orange import ep_orange
+from lemon.e3_lemon import ep_lemon
+from lemon.e4_pomegranate import ep_pomegranate
 
 
 ## define alias

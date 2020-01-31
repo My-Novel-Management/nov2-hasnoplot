@@ -41,9 +41,5 @@ def set_person(w: World):
             ),
     )
     ## texture
-    w.setTexture("noto",
-            [
-                "髪", "白髪混じりで短く刈り揃えている",
-                "体格", "百八十近くで、割とがっしり",
-                ])
+    w.setTexture("noto", "髪は白髪まじりで短く借り揃えている、180cm近くあり割とがっしり")
 

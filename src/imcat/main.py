@@ -10,10 +10,10 @@ sys.path.append('storybuilder')
 from storybuilder.builder.world import World
 from storybuilder.builder.writer import Writer
 ## local files
-from imcat.catandbeer import ep_cat_and_beer
-from imcat.catandmaster import ep_cat_and_master
-from imcat.catandnovel import ep_cat_and_novel
-from imcat.catandpapers import ep_cat_and_manupapers
+from imcat.e1_catandmaster import ep_cat_and_master
+from imcat.e2_catandnovel import ep_cat_and_novel
+from imcat.e3_catandbeer import ep_cat_and_beer
+from imcat.e4_catandpapers import ep_cat_and_manupapers
 
 
 ## define alias

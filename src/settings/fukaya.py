@@ -35,9 +35,5 @@ def set_person(w: World):
             ),
     )
     ## texture
-    w.setTexture("fukaya",
-            [
-                "髪", "ショートヘア、僅かに赤みがかった染め",
-                "体格", "160cmで中肉、胸は大きめ、意外と筋肉質",
-                ])
+    w.setTexture("fukaya", "ショートヘア、僅かに赤み。体格は160cm中肉。意外と筋肉質")
 

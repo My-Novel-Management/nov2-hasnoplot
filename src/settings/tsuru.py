@@ -34,8 +34,5 @@ def set_person(w: World):
             ),
     )
     ## texture
-    w.setTexture("tsuru",
-            [
-                "髪", "長く伸ばしたものを後ろで括っていた",
-                ])
+    w.setTexture("tsuru", "長髪で後ろで括っていた")
 

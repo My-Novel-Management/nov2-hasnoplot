@@ -50,8 +50,5 @@ def set_person(w: World):
             ),
     )
     ## texture
-    w.setTexture("sana",
-            [
-                "髪", "耳が隠れる程度のボブ",
-                ])
+    w.setTexture("sana", "140cm台の小柄、肉付きは良い。髪は耳が隠れる程度のボブ")
 

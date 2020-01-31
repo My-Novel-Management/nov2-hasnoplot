@@ -34,8 +34,5 @@ def set_person(w: World):
             ),
     )
     ## texture
-    w.setTexture("azumino",
-            [
-                "髪", "長め",
-                ])
+    w.setTexture("azumino", "ロングヘアに眼鏡")
 

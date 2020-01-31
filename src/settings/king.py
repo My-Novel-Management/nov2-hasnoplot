@@ -34,8 +34,5 @@ def set_person(w: World):
             ),
     )
     ## texture
-    w.setTexture("king",
-            [
-                "髪", "円形脱毛",
-                ])
+    w.setTexture("king", "短めの髪")
 

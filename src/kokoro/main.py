@@ -10,10 +10,10 @@ sys.path.append('storybuilder')
 from storybuilder.builder.world import World
 from storybuilder.builder.writer import Writer
 ## local files
-from kokoro.masterandletter import ep_master_and_letter
-from kokoro.masterandme import ep_master_and_me
-from kokoro.masterandparents import ep_master_and_parents
-from kokoro.parentsandme import ep_parents_and_me
+from kokoro.e1_masterandme import ep_master_and_me
+from kokoro.e2_parentsandme import ep_parents_and_me
+from kokoro.e3_masterandparents import ep_master_and_parents
+from kokoro.e4_masterandletter import ep_master_and_letter
 
 
 ## define alias

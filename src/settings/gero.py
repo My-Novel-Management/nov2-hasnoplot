@@ -35,8 +35,5 @@ def set_person(w: World):
             ),
     )
     ## texture
-    w.setTexture("gero",
-            [
-                "髪", "長髪",
-                ])
+    w.setTexture("gero", "長髪で後ろにまとめている")
 

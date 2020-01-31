@@ -10,10 +10,10 @@ sys.path.append('storybuilder')
 from storybuilder.builder.world import World
 from storybuilder.builder.writer import Writer
 ## local files
-from kinosaki.atinn import ep_atinn
-from kinosaki.edgeindead import ep_edgeindead
-from kinosaki.insided import ep_insided
-from kinosaki.oldtalk import ep_oldtalk
+from kinosaki.e1_atinn import ep_atinn
+from kinosaki.e2_oldtalk import ep_oldtalk
+from kinosaki.e3_edgeindead import ep_edgeindead
+from kinosaki.e4_insided import ep_insided
 
 
 ## define alias

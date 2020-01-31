@@ -10,10 +10,10 @@ sys.path.append('storybuilder')
 from storybuilder.builder.world import World
 from storybuilder.builder.writer import Writer
 ## local files
-from runmeros.beangry import ep_angryeditor
-from runmeros.hurryup import ep_hurryeditor
-from runmeros.running import ep_runeditor
-from runmeros.takeoff import ep_takeoffeditor
+from runmeros.e1_running import ep_runeditor
+from runmeros.e2_beangry import ep_angryeditor
+from runmeros.e3_hurryup import ep_hurryeditor
+from runmeros.e4_takeoff import ep_takeoffeditor
 
 
 ## define alias

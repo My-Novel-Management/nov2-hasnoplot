@@ -6,8 +6,8 @@ import sys
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.append('storybuilder')
 from storybuilder.builder.world import World
-from storybuilder.assets import basic
-from config import PERSONS, STAGES, DAYS, TIMES, ITEMS, WORDS, RUBIS, LAYERS
+from storybuilder.assets import basic, accessory
+from config import PERSONS, AREAS, STAGES, DAYS, TIMES, ITEMS, WORDS, RUBIS, LAYERS
 ## local files
 from src.gingatrain.main import ch_gingatrain
 from src.imcat.main import ch_Imacat
@@ -26,6 +26,7 @@ from src.substories.publish_longnovel import bk_longnovel
 from src.substories.publish_short import bk_shortnovel
 from src.substories.herfriends import bk_herfriends
 from src.substories.sana_noto import bk_sana_and_noto
+from src.substories.sanadiary import bk_sanadiary
 ## settings
 from src.settings import asahi
 from src.settings import azumino
@@ -60,10 +61,12 @@ def create_world():
     w = World("先生プロットがありません！")
     w.setCommonData()
     w.setAssets(basic.ASSET)
+    w.setAssets(accessory.ASSET)
     w.buildDB(PERSONS,
-            STAGES, DAYS, TIMES, ITEMS, WORDS,
+            AREAS, STAGES, DAYS, TIMES, ITEMS, WORDS,
             RUBIS, LAYERS)
     w.setBaseDate(2017)
+    w.setBaseArea("Tokyo")
     # set persons
     asahi.set_person(w)
     azumino.set_person(w)
@@ -85,6 +88,7 @@ def create_world():
             *bk_shortnovel(w),
             *bk_herfriends(w),
             *bk_sana_and_noto(w),
+            *bk_sanadiary(w),
             )
     # set outline
     w.setOutline("出版社に勤める沙奈は世話になった先輩の産休の穴埋めとして書籍部に異動になり、癖のある大先生の担当となるが、原稿を取りに行くとプロットすらないと言われた")

@@ -34,8 +34,5 @@ def set_person(w: World):
             ),
     )
     ## texture
-    w.setTexture("owase",
-            [
-                "髪", "茶髪",
-                ])
+    w.setTexture("owase", "茶髪")
 

@@ -10,10 +10,10 @@ sys.path.append('storybuilder')
 from storybuilder.builder.world import World
 from storybuilder.builder.writer import Writer
 ## local files
-from gingatrain.campanella import ep_campanella
-from gingatrain.epilogue import ep_epilogue
-from gingatrain.geovanni import ep_geovanni
-from gingatrain.truthstory import ep_truthstory
+from gingatrain.e1_campanella import ep_campanella
+from gingatrain.e2_geovanni import ep_geovanni
+from gingatrain.e3_truthstory import ep_truthstory
+from gingatrain.e4_epilogue import ep_epilogue
 
 
 ## define alias

@@ -10,10 +10,10 @@ sys.path.append('storybuilder')
 from storybuilder.builder.world import World
 from storybuilder.builder.writer import Writer
 ## local files
-from yukiguni.nextstory import ep_nextstory
-from yukiguni.snowtale import ep_snowtale
-from yukiguni.sunset import ep_sunsetsight
-from yukiguni.temarisong import ep_temarisong
+from yukiguni.e1_sunset import ep_sunsetsight
+from yukiguni.e2_temarisong import ep_temarisong
+from yukiguni.e3_snowtale import ep_snowtale
+from yukiguni.e4_nextstory import ep_nextstory
 
 
 ## define alias

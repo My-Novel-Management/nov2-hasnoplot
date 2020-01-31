@@ -10,10 +10,10 @@ sys.path.append('storybuilder')
 from storybuilder.builder.world import World
 from storybuilder.builder.writer import Writer
 ## local files
-from spidersilk.mastermind import ep_mastermind
-from spidersilk.spiderthread import ep_spiderthread
-from spidersilk.storyplot import ep_storyplot
-from spidersilk.teenweb import ep_teenweb
+from spidersilk.e1_teenweb import ep_teenweb
+from spidersilk.e2_storyplot import ep_storyplot
+from spidersilk.e3_spiderthread import ep_spiderthread
+from spidersilk.e4_mastermind import ep_mastermind
 
 
 ## define alias

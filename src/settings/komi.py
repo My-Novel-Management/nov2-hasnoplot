@@ -34,9 +34,5 @@ def set_person(w: World):
             ),
     )
     ## texture
-    w.setTexture("komi",
-            [
-                "髪", "痛みやすく猫みたいな細い癖毛",
-                "体格", "小柄で痩せ気味",
-                ])
+    w.setTexture("komi", "痛みやすく細い癖毛、小柄で痩せ気味")
 
