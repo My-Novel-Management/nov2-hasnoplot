@@ -21,7 +21,7 @@ W = Writer
 
 ## chapter
 def ch_gingatrain(w: World):
-    return w.chapter("銀河鉄道の夜",
+    return w.chapter("真実は銀河鉄道の夜に消えた",
             ## NOTE: episodes
             ##  1.カムパネルラはどこに消えた？
             ##  2.ジョバンニの気持ち
