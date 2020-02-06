@@ -22,7 +22,7 @@ W = Writer
 
 ## chapter
 def ch_nolongerhuman(w: World):
-    return w.chapter("人間失格",
+    return w.chapter("作家失格",
             ## NOTE: episodes
             ##  1.はしがき
             ##  2.第一の手記

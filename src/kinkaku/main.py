@@ -22,7 +22,7 @@ W = Writer
 
 ## chapter
 def ch_kinkakuji(w: World):
-    return w.chapter("金閣寺",
+    return w.chapter("金閣寺の美意識",
             ## NOTE: episodes
             ##  1.第一章
             ##  2.第二章

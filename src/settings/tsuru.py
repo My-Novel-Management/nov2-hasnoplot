@@ -31,6 +31,10 @@ def set_person(w: World):
     w.entryHistory(w.tsuru,
     *w.createHistories(
         (6, "小学校入学"),
+        (13, "中学校入学"),
+        (16, "高校入学"),
+        (19, "上京して作家に弟子入り"),
+        (22, "自殺"),
             ),
     )
     ## texture
