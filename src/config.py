@@ -97,6 +97,7 @@ STAGES = (
         ## 三鷹市
         ("sta-mitakadai", "三鷹台駅", "Mitaka", "先生のアパートの最寄り駅"),
         ("tamagawariver", "玉川上水", "Mitaka"),
+        ("inokashirapark", "井の頭公園", "Mitaka"),
         ("hisapart", "虞美人荘", "Mitaka", "先生のアパート"),
         ("hisnewapart", "先生の新アパート", "Mitaka"),
         ("hiscemetery", "敦賀の墓地", "Mitaka"),
@@ -138,6 +139,9 @@ STAGES = (
 
 DAYS = (
         # Tag / 名前 / 月 / 日 / 年
+        ## 共通
+        ("dazaibirth", "太宰治の誕生日", 6,19, 1909),
+        ("dazaidead", "太宰治の命日", 6,13, 1948),
         ## 当時
         ("master_jrschool", "先生の中学時代", 4,1, 1989),# 中２
         ("master_highschool", "先生の高校時代", 4,1, 1992),# 高２
@@ -242,6 +246,10 @@ WORDS = (
         ("dengeki", "伝説文庫", "電撃文庫が元ネタ。ラノベの大手レーベル"),
         ### 先生の言葉
         ("masterword001", "小説は必ず書き終えなければならない。それが喩え終わりのない物語であったとしてもね"),
+        ### 小説関連
+        ("alicecontest1", "アリスノベル新人賞"),
+        ### 敦賀
+        ("deadtsuruyear", "一九九七年六月十三日"),
         )
 
 RUBIS = (
