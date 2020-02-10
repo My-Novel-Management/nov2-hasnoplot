@@ -22,7 +22,7 @@ W = Writer
 
 ## chapter
 def ch_kinosaki(w: World):
-    return w.chapter("城の崎にて",
+    return w.chapter("城の崎にて先生と",
             ## NOTE: episodes
             ##  1.旅の宿にて
             ##  2.昔の話にて
