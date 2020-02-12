@@ -22,7 +22,7 @@ W = Writer
 
 ## chapter
 def ch_yukiguni(w: World):
-    return w.chapter("雪国",
+    return w.chapter("雪国の思い出",
             ## NOTE: episodes
             ##  1.夕景色
             ##  2.手鞠歌
