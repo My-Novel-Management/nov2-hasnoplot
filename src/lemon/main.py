@@ -22,7 +22,7 @@ W = Writer
 
 ## chapter
 def ch_lemon(w: World):
-    return w.chapter("檸檬",
+    return w.chapter("檸檬の苦味は短編と",
             ## NOTE: episodes
             ##  1.洋梨
             ##  2.蜜柑
