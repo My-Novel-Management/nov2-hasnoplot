@@ -29,7 +29,7 @@
 PERSONS = (
         # Tag / 氏,名 / 歳 / 誕生日 / 性別 / 職業 / 呼称 / 紹介
         ("sana", "沙奈", "一宮,沙奈", 25, (9,15), "female", "編集者", "me:私:gero:弥生:azu:三喜:a_tsuchi:ツッチー"),# 愛知県
-        ("noto", "能登川", "能登川,修", 42, (6,14), "male", "作家", "me:僕:sana:一宮"),# 石川県
+        ("noto", "能登川", "能登川,修", 42, (6,14), "male", "作家", "me:僕:sana:一宮:a_chiyo:お千代"),# 石川県
         ## 出版社
         ("king", "大井", "大井,景勝", 50, (1,1), "male", "編集長", "me:俺", "あだ名は「王」"),# 神奈川県
         ("fukaya", "深谷", "深谷,英里", 35, (10,1), "female", "編集者", "me:わたし"),# 埼玉県
@@ -111,7 +111,7 @@ STAGES = (
         ("hisnewapart", "先生の新アパート", "Mitaka"),
         ("hiscemetery", "敦賀の墓地", "Mitaka"),
         ("masterbar", "先生いきつけのバー", "Mitaka"),
-        ("mastercafe", "先生いきつけの喫茶店", "Mitaka"),
+        ("mastercafe", "喫茶ブラン・ル・ノワール", "Mitaka", "行きつけの喫茶店"),
         ("masterrestaurant", "先生いきつけの洋食屋", "Mitaka"),
         ## 練馬区
         ("sta-kamishakujii", "上石神井駅", "Nerima", "沙奈たちのアパートの最寄り駅"),
