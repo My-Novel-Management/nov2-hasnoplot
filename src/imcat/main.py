@@ -22,7 +22,7 @@ W = Writer
 
 ## chapter
 def ch_Imacat(w: World):
-    return w.chapter("吾輩は猫である",
+    return w.chapter("吾輩は作家である",
             ## NOTE:
             ##  1.猫と先生
             ##  2.猫と小説
