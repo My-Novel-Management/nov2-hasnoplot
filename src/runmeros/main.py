@@ -22,7 +22,7 @@ W = Writer
 
 ## chapter
 def ch_runmeros(w: World):
-    return w.chapter("走れメロス",
+    return w.chapter("走れ編集！",
             ## NOTE: episodes
             ##  1.走れ編集者
             ##  2.憤れ編集者
