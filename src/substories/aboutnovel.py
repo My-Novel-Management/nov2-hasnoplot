@@ -22,6 +22,8 @@ def bk_aboutnovel(w: World):
     sana, noto = W(w.sana), W(w.noto)
     manupaper = W(w.manupaper)
     return (
+            ## for Sub contents
+            ## for Story
             w.block("プロットとは",
                 sana.do("$Sは一瞬考えたが「はい」と頷いた", "&"),
                 noto.do("その途端に先生は特大の溜息を零す"),
