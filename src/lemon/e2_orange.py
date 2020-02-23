@@ -104,6 +104,7 @@ def sc_uppaper(w: World):
     sana, noto = W(w.sana), W(w.noto)
     gero, azu = W(w.gero), W(w.azumino)
     return w.scene("原稿が上がった",
+            w.symbol("　　　　◆"),
             sana.be(),
             sana.explain("それから毎日午後には先生のアパートに顔を出しつつ、仕事の合間を縫っては、スマートフォンに短編小説のアイデアや文章のメモを取り、",
                 "残業を終えて家に帰ってから、とにかく一時間、パソコンを前にああでもないこうでもないと、小説を書いた",
@@ -120,6 +121,7 @@ def sc_uppaper(w: World):
 def sc_discard(w: World):
     sana, noto = W(w.sana), W(w.noto)
     return w.scene("原稿を捨てられた",
+            w.symbol("　　　　◆"),
             sana.come(),
             sana.talk("先生、原稿上がりましたよ！"),
             sana.do("翌日、印刷した原稿を手に、先生がどんな反応をするだろうかと期待半分不安半分でアパートに乗り込んでいったが、"),
@@ -142,7 +144,7 @@ def sc_discard(w: World):
             noto.talk("とりあえず枚数さえ満たせば良いとか思ってなかった？",
                 "高々原稿用紙二十枚程度、文字数にすれば二万字にも満たない",
                 "筆の早い作家ならそれこそ半日もあれば書き上げられるだろう",
-                "けどね、作家は、いや、少なくとも$meは、たかがその程度の枚数、とは思って書いたことなんか一度もない"),
+                "けどね、作家は、いや、少なくとも$meは、たかがその程度の枚数、と思って書いたことなんか一度もない"),
             sana.talk("$meだって……"),
             noto.talk("でも一時間で書き上げようが一月、あるいは一年掛けて書いたものであろうが、そんなことは本になれば誰も問題にしない",
                 "作品が面白いかどうか、それだけだろう？"),
@@ -198,7 +200,7 @@ def sc_lonleyroad(w: World):
 
 ## episode
 def ep_orange(w: World):
-    return w.episode("2.蜜柑",
+    return w.episode("2.蜜柑の酸味で目を覚ます",
             ## NOTE
             sc_masterprogress(w),
             sc_harddays(w),

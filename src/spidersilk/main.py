@@ -22,7 +22,7 @@ W = Writer
 
 ## chapter
 def ch_spidersilk(w: World):
-    return w.chapter("蜘蛛の糸は切れた",
+    return w.chapter("蜘蛛の糸は切れたか？",
             ## NOTE:
             ##  1.若者のネット
             ##  2.物語のプロット

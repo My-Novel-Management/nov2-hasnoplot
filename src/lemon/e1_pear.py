@@ -23,15 +23,16 @@ def sc_introuble(w: World):
     return w.scene("小説を書くという混乱",
             sana.be("#部屋にいる"),
             gero.be(),
-            azu.be(),
             sana.talk("なんで$meが小説を書くことになるのよ！"),
-            sana.do("その夜、シェアハウスのリビングで缶チューハイを片手に$Sは$geroたちに愚痴っていた"),
+            sana.do("その夜、シェアハウスのリビングで缶チューハイを片手に$full_sanaは友人たちに愚痴っていた"),
             gero.talk("いやいや、あんたが約束したんだがな"),
             sana.talk("そりゃあそうなんだけどさ、でも編集の仕事って何？　ってならない？"),
             gero.talk("まあ小説を書く側ではないわな"),
-            sana.do("そう言って$geroは大口を開けて笑ったが、$Sの怒りは収め所を失っている"),
+            sana.do("そう言って$full_geroは大口を開けて笑ったが、$Sの怒りは収め所を失っている"),
+            azu.come(),
             azu.talk("でもさー、$noto先生に自分が書いた小説を読んでもらえるってことでしょ？",
                 "それってすごいことじゃないかな", "たぶん世の中にはお金払ってもいいから先生に読んでもらいたいって人いっぱいいると思うよ"),
+            azu.do("はいどうぞ、と$CSが買ってきた焼き鳥を温めたものと、玉ねぎと牛蒡の甘辛炒めが載った皿を置きながら、$full_azuminoが言った"),
             sana.talk("あのセクハラ作家様に読まれたいとか、そんな風に考えてる人なんか希少種に決まってるわよ！"),
             sana.do("$Sは自分のスマートフォンを手元に引き寄せ、手早く何かを打ち込む"),
             gero.talk("ん？　あんた何しとるがね"),
@@ -41,8 +42,8 @@ def sc_introuble(w: World):
             sana.talk("これでその$notoセクハラ先生様の実力というものを試してあげようと、こういう訳よ"),
             gero.talk("あんたそれ、絶対明日の朝後悔するやつだで"),
             azu.talk("はい。じゃあリツイートしといたげたから、がんばってね"),
-            sana.do("$azuはにこやかに自分のスマートフォンを手にそう言ったが、$geroは苦笑をして大皿からイカのゲソを摘んだ"),
-            sana.do("スマートフォンの画面上では次々とＲＴの数が増えていく", "おそらくおふざけでやっている人が大多数なのだろう",
+            sana.do("$azuはにこやかに自分のスマートフォンを手にそう言ったが、$geroは苦笑をして大皿からネギマの串を一本摘んだ"),
+            sana.do("スマートフォンの画面上では次々とＲＴの数が増えていく", "おそらくおふざけでやっている人が大多数だ",
                 "それでも数字の伸びが終わらないので少しだけ怖くなって$Sはアプリを閉じた"),
             sana.talk("あー、美味しい"),
             sana.do("チューハイの程よいアルコールと炭酸が日頃の鬱憤を忘れさせてくれる"),
@@ -136,6 +137,7 @@ def sc_herpaper(w: World):
     gero, azu = W(w.gero), W(w.azumino)
     nira, king, yone = W(w.nirasaki), W(w.king), W(w.yonezawa)
     return w.scene("彼女の原稿",
+            w.symbol("　　　　◆"),
             sana.explain("しかしその祈りは翌日の出社時に、脆くも崩れ去った"),
             sana.come("翌朝オフィスに入ってきた彼女のデスクに積み上がっていた選考原稿の束と、その上に置かれていた調査票のリストを目にした瞬間、",
                 "真っ先に『$full_azumino』の名前を見つけてしまい、席に就くよりも早く眼前を覆って机に突っ伏した"),
@@ -153,6 +155,7 @@ def sc_deadline_approach(w: World):
     gero, azu = W(w.gero), W(w.azumino)
     nira, king, yone = W(w.nirasaki), W(w.king), W(w.yonezawa)
     return w.scene("近づく締切",
+            w.symbol("　　　　◆"),
             sana.come("その日の午後からは胃が痛くなる編集会議だった",
                 "一番最後だった$Sは慌てて会議室に入り、頭を下げて自分の席に就く"),
             king.be("#既に席について"),
@@ -196,7 +199,7 @@ def sc_deadline_approach(w: World):
 
 ## episode
 def ep_pear(w: World):
-    return w.episode("1.洋梨",
+    return w.episode("1.洋梨の甘味に惑わされ",
             ## NOTE
             sc_introuble(w),
             sc_oldnovel(w),
