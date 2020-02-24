@@ -22,12 +22,12 @@ def sc_newperson(w: World):
     nira, king, tsuchi = W(w.nirasaki), W(w.king), W(w.tsuchiura)
     return w.scene("新人現る",
             sana.come("#出社してくる$S"),
-            sana.do("週明けの、まだ新年の空気漂うオフィスに、珍しく息を荒くすることなく到着した$Sは、そこで王と談笑している謎の茶髪を発見した"),
+            sana.do("週明けの、まだ新年の空気漂うオフィスに、珍しく息を荒くすることなく到着した$Sは、そこで編集長と談笑している謎の茶髪を発見した"),
             king.be("#珍しく談笑"),
             tsuchi.be("#$kingと笑って話している若い男"),
             nira.be("#相変わらず仏頂面で座っている"),
             sana.talk("おはよう。あれ誰？"),
-            sana.do("頭だけ下げて（そんなものちらりとも王は見なかったけれど）、自分の席に就き、既に出社していた$nirasakiにそれとなく尋ねる"),
+            sana.do("頭だけ下げて（そんなものちらりとも｜王《キング》は見なかったけれど）、自分の席に就き、既に出社していた$nirasakiにそれとなく尋ねる"),
             nira.talk("ああ。なんか王が連れてきたバイトだってさ",
                 "へらへらして、どうにもあの手のは苦手なんだよね", "いつまで続くやら"),
             sana.talk("へえ"),
@@ -56,7 +56,7 @@ def sc_newperson(w: World):
             tsuchi.talk("$ln_sanaさんてベテランすか？"),
             sana.talk("一番下っ端です"),
             tsuchi.talk("じゃあ見た目通りすか！　ははは！"),
-            tsuchi.do("何が面白いのか分からないが大声で笑うと「とにかくヨロシクす」と手を差し出してきた", "&&"),
+            tsuchi.do("何が面白いのか分からないが大声で笑うと「とにかくヨロシクす」と手を差し出してきた", "&"),
             sana.do("あまり気は進まなかったがその手を握り返して握手をすると、手汗なのか、べっとりとした感触が$Sの右手に残った"),
             nira.talk("ああ、$meはちょっと外回り行ってくるわ", "ご苦労さん"),
             sana.talk("えっ……"),
@@ -106,6 +106,7 @@ def sc_greeting(w: World):
     sana, noto = W(w.sana), W(w.noto)
     nira, king, tsuchi = W(w.nirasaki), W(w.king), W(w.tsuchiura)
     return w.scene("挨拶",
+            w.symbol("　　　　◆"),
             sana.come("#先生のところに挨拶にやってきた"),
             tsuchi.be("#もそもそとついてきている"),
             sana.explain("会社案内から始まって、ちょうど雑誌の見本も貰っていたのでそのお礼も兼ねて印刷所の方まで$ln_tsuchiuraを連れて回ってきたのだけれど、",
@@ -291,6 +292,7 @@ def sc_ourparty(w: World):
     sana, noto = W(w.sana), W(w.noto)
     gero, azu = W(w.gero), W(w.azumino)
     return w.scene("私たちの新年会",
+            w.symbol("　　　　◆"),
             sana.explain("しかし言われた通り、新年会には先生の姿はなかった",
                 "出産を控えている$fukaya先輩は流石に出席しなかったが、それでも一文の面々も集まりなかなかの賑わいだった",
                 "$Sは早々に酔っ払った茶髪君の介護であまり多くの作家先生とは話せなかったが、それでもライトノベルの先生方は思ったよりも若い人は少なく、",
@@ -300,7 +302,7 @@ def sc_ourparty(w: World):
             azu.come("#鍋を運んできて"),
             sana.be("#飲み物を入れている"),
             sana.explain("#準備はみんなでした"),
-            sana.explain("目の前にの鍋には$Sの冬のボーナスを投入した牛肉がたっぷりと入っており、野菜や豆腐と共に美味しそうに煮えている",
+            sana.explain("目の前の鍋には$Sの冬のボーナスを投入した牛肉がたっぷりと入っており、野菜や豆腐と共に美味しそうに煮えている",
                 "三人で暮らすようになって初めて開いた飲み会の時も今みたいにすき焼き風鍋をしては、夜中まであれやこれやと話し合ったことを思い出す",
                 "四月に$azuが加わってから最初こそややギクシャクした感じがあったが、今は何でも相談し合える仲になったと$Sは思っている"),
             sana.talk("じゃあ、乾杯！"),
@@ -333,7 +335,7 @@ def sc_ourparty(w: World):
 
 ## episode
 def ep_nextstory(w: World):
-    return w.episode("4.続雪国",
+    return w.episode("4.続先生と雪国",
             ## NOTE
             sc_newperson(w),
             sc_guideoffice(w),

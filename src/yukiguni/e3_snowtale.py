@@ -39,7 +39,7 @@ def sc_masterhome(w: World):
             sana.talk("あの"),
             noto.talk("何だい、$sana君"),
             sana.talk("先生はもう一度文芸に復帰する気はないんですか？"),
-            noto.do("なんだそっちか、と先生は呟き、少しほっとしたような目元で$Sを見返した"),
+            noto.do("なんだそっちか、と先生は呟き、少しほっとしたような目元で$CSを見返した"),
             noto.talk("$sana君はライトノベルと一般文芸の違いは何だと考えているのだろうか"),
             sana.think("その問いかけは編集部でもよく話題に上がるものだったが、$Sはいつも決まってこう答えることにしていた"),
             sana.talk("読者層です", "例えば漫画雑誌であればターゲットとする年齢層や性別によって選ぶ内容や話題を分けています",
@@ -71,7 +71,7 @@ def sc_masterhome(w: World):
                 "またそうやって表現することでしか掴みに行けない人間や人生の深淵というものがある",
                 "文芸、あるいは文学と呼ばれるものは、そういった表面的ではない、深い文章によって成立している",
                 "これが何より大きな差になっているんだよ"),
-            sana.do("$Sの頭の中で曖昧模糊としてものが、先生の言葉を受けてすっと形になる",
+            sana.do("$Sの頭の中で曖昧模糊としていたものが、先生の言葉を受けてすっと形になる",
                     "おそらくこの感覚こそが文学なのだ", "文芸なのだ"),
             sana.think("その理解が正しいかどうかは分からなかったけれど、こうして一つ一つ、自分の中で言葉になっていないものに形を与えていくという作業を、",
                     "先生たち作家という人種は地道に続けているのだろう",
@@ -105,6 +105,7 @@ def sc_backtohome(w: World):
     sana, noto = W(w.sana), W(w.noto)
     tsuru, komi, asahi = W(w.tsuru), W(w.komi), W(w.asahi)
     return w.scene("帰りの新幹線で",
+            w.symbol("　　　　◆"),
             noto.be("#見送りに来て"),
             sana.be("#帰りの車内"),
             sana.explain("慌ただしく日帰りで東京へととんぼ返りをする新幹線の車内で、", "&"),
@@ -125,7 +126,7 @@ def sc_backtohome(w: World):
 
 ## episode
 def ep_snowtale(w: World):
-    return w.episode("3.雪国抄",
+    return w.episode("3.先生の雪国抄",
             ## NOTE
             sc_masterhome(w),
             sc_backtohome(w),
