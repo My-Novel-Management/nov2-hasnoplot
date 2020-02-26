@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 ## [0.10.3] - 2020-02-26
+### Changed
+- storybuilder: v0.5.1-4
 ### Fixed
 - chapter 7
 
