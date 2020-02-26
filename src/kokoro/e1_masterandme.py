@@ -48,7 +48,7 @@ def sc_thinkingnovel(w: World):
                 "けれど作家が作品を書く為に何ができるのかを考えた時、それを相手が求めるのなら、やはり応えるのが編集の義務なんじゃないだろうか"),
             gero.talk("ああ、それよりさ、ちょっといい？"),
             gero.do("$geroはマウスを奪ってブラウザを立ち上げると、$on_hercompanyのホームページを開く"),
-            monitor.look("画面には漫画やアニメ、小説の表紙画像がこれでもかと貼り付けられたが、", "&"),
+            monitor.look("画面には漫画やアニメ、小説の表紙画像がこれでもかと貼り付けられていたが、", "&"),
             gero.do("彼女はその中の『$w_alicecontest1』のバナーをクリックした",
                 "すぐに切り替わり、そこには作家と作品名のリストがずらりと表示される"),
             sana.talk("え？", "これって一次選考結果？"),
@@ -99,6 +99,7 @@ def sc_resultannounce(w: World):
     sana, noto = W(w.sana), W(w.noto)
     gero, azu = W(w.gero), W(w.azumino)
     return w.scene("結果発表",
+            w.symbol("　　　　◆"),
             sana.be(),
             gero.be(),
             azu.be(),

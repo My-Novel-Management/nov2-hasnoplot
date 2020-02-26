@@ -22,7 +22,7 @@ W = Writer
 
 ## chapter
 def ch_kokoro(w: World):
-    return w.chapter("先生のこころ",
+    return w.chapter("先生のこゝろ",
             ## NOTE: episodes
             ##  1.先生と私
             ##  2.私と両親

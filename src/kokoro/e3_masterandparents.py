@@ -61,6 +61,7 @@ def sc_visit_grave(w: World):
 def sc_riverside(w: World):
     sana, noto = W(w.sana), W(w.noto)
     return w.scene("川沿いを",
+            w.symbol("　　　　◆"),
             sana.be("#食後、先生に連れ出され、歩いていた"),
             noto.be("#$sanaの少し前を歩く"),
             sana.explain("霊園を出て、そのままアパートに戻るものと思っていたら、先生が「少し歩かないか」と言うので、付き合うことにした",
@@ -88,7 +89,7 @@ def sc_abouthuman(w: World):
             sana.talk("あ……"),
             sana.think("それが入店時の違和感の正体だったのだ",
                 "営業中、それもランチタイムにも関わらず、店が開いていることが『ＯＰＥＮ』というプレートでしか分からなかった",
-                "オフィス街に隣接する多くの飲食店ではこんな時間帯ともなれば、店の外にランチメニューやおすすめを書いた看板を出して客寄せをしている",
+                "オフィス街に隣接する多くの飲食店ではあの時間帯ともなれば、店の外にランチメニューやおすすめを書いた看板を出して客寄せをしている",
                 "けれどあそこは看板どころかメニューすら提示されていなかった"),
             noto.talk("まあ趣味で続けていたらしいからね。これも原価は相当高い", "&"),
             noto.talk("好きなことでも続けるのは本当に大変だよ", "&"),
@@ -147,6 +148,7 @@ def sc_treasure_friend(w: World):
     sana, noto = W(w.sana), W(w.noto)
     inside = W(w.inside)
     return w.scene("友を大切に",
+            w.symbol("　　　　◆"),
             sana.come("#先生と井の頭公園まで歩く"),
             noto.be("#歩きながら語っている"),
             sana.talk("あ……"),
