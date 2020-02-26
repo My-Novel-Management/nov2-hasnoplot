@@ -81,6 +81,7 @@ def sc_onsen(w: World):
 def sc_aboutscene(w: World):
     sana, noto = W(w.sana), W(w.noto)
     return w.scene("シーンについて",
+            w.symbol("　　　　◆"),
             sana.be("#浴衣で伸びている"),
             noto.be("#内風呂に入っている"),
             sana.explain("散々温泉を浴びてきたというのに、部屋に帰ってきてからも先生は一人、内風呂を楽しんでいた"),
