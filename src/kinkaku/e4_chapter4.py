@@ -45,7 +45,7 @@ def sc_writing(w: World):
                 "&"),
             _.think("それが彼女の心境の変化によるものかそれともただ経済的な事情によるものか、$Sには判断がつかなかったが、",
                 "ずっと落ち込んでいるよりは何かに没頭していられる方が今の彼女にとっては良いのかも知れない、と思っている"),
-            sana.do("キッチンのコーヒーメーカーで新しくコーヒーを沸かすと、タンブラーに注いで備蓄のバターロールと一緒に部屋に持ち運ぶ",
+            sana.do("キッチンのコーヒーメーカーで新しくコーヒーを沸かすと、タンブラーに注いで買い置きのバターロールと一緒に部屋に持ち運ぶ",
                 "ウェットティッシュを準備してテーブルにパソコンを広げると、電源を入れて起動音を聞き、コーヒーを一口啜った"),
             _.think("パソコンが立ち上がるのを待ちながら、ふと考えてしまう",
                 "どうして自分まで長編小説を書かなければいけないのだろうかと", "&"),
@@ -81,6 +81,7 @@ def sc_aboutmaster(w: World):
     nira, tsuchi, king = W(w.nirasaki), W(w.tsuchiura), W(w.king)
     inside = W(w.inside)
     return w.scene("先生について",
+            w.symbol("　　　　◆"),
             sana.be("そこは時々使わせてもらっている、落ち着いた雰囲気の昭和感漂う喫茶店だった"),
             inside.look("還暦を過ぎていると思える女性店主が一人で切り盛りしている席数二十ほどの狭い店内で、", "&"),
             sana.do("$Sはいつも窓際の席を使っていた"),
@@ -115,6 +116,7 @@ def sc_emergency(w: World):
     gero, azu = W(w.gero), W(w.azumino)
     tv = W(w.tv)
     return w.scene("緊急事態",
+            w.symbol("　　　　◆"),
             w.comment("火事のニュースに出ていたのは先生のアパートだった"),
             sana.come("マンションに戻ってくると遠くで救急車と消防車のサイレンが入り混じって鳴っているのが聞こえた"),
             sana.hear("#遠くでサイレン"),
@@ -149,6 +151,7 @@ def sc_burning(w: World):
     nira, tsuchi, king = W(w.nirasaki), W(w.tsuchiura), W(w.king)
     poli = W(w.police)
     return w.scene("燃え盛るアパート",
+            w.symbol("　　　　◆"),
             w.comment("かけつけた沙奈は燃える先生のアパートを見て呆然と"),
             sana.come("#やってくる"),
             sana.do("$Sが現場を訪れた時には既にすごい人混みで、目の前には野次馬の頭がずらりと壁を作っていた",
@@ -173,7 +176,7 @@ def sc_burning(w: World):
             sana.do("顔が煤けていたが、紛れもなくそれは先生だった"),
             sana.talk("先生、大丈夫なんですか？"),
             noto.talk("ああ、$sana君。ごめん。原稿、焼けちゃったよ"),
-            noto.do("力なく答えると、彼は手にぎゅっと握りしめていた原稿の燃え滓を$Sに差し出した"),
+            noto.do("力なく答えると、彼は手にぎゅっと握りしめていた原稿の燃え滓を$CSに差し出した"),
             sana.do("#それを受け取り"),
             sana.talk("原稿よりも先生が"),
             noto.talk("$meは死なない。大丈夫だ"),
@@ -189,7 +192,7 @@ def sc_burning(w: World):
 
 ## episode
 def ep_chapter4(w: World):
-    return w.episode("4.第四章",
+    return w.episode("4.緊急事態の第四章",
             ## NOTE
             sc_writing(w),
             sc_aboutmaster(w),
