@@ -21,6 +21,7 @@ def sc_hersick(w: World):
     sana, noto = W(w.sana), W(w.noto)
     tsuru, komi, asahi = W(w.tsuru), W(w.komi), W(w.asahi)
     return w.scene("彼女の病気",
+            w.br(),
             noto.come("#$tsuruと共にやってくる"),
             tsuru.come(),
             komi.be("$Sは病室でもずっと、本を読んでいた", "&"),
@@ -90,13 +91,15 @@ def sc_herdead(w: World):
     sana, noto = W(w.sana), W(w.noto)
     tsuru, komi, asahi = W(w.tsuru), W(w.komi), W(w.asahi)
     return w.scene("彼女の死",
+            w.br(),
             noto.be("#黒服で佇んでいる"),
             noto.explain("彼女が亡くなったのは$meたちが高校を卒業してから半年後のことだった",
                 "最後は骨までボロボロになり、燃やされた後には本当に何も残っていなかったくらいだ"),
             tsuru.come("#煙草を咥えながらやってきて"),
             tsuru.talk("何だ、$noto。こっちにいたのか"),
             noto.talk("ああいう場所は、どうも苦手でね"),
-            tsuru.look("煙草を咥えたまま黒服姿の$tsuruがやってきたが、いつの間にか髪はすっかり金色になり、眼鏡はコンタクトレンズへと変わってしまっていた", "&"),
+            tsuru.look("煙草を咥えたまま黒服姿の$tsuruがやってきたが、いつの間にか髪はすっかり金色になり、",
+                "頬は痩せこけ、切れ長だったそれは鋭い目つきに変わってしまっていた", "&"),
             noto.explain("卒業後、$meとは違い、上京して本格的に作家を目指す為に著名な小説家の下で日々修練に励んでいると、噂では聞いていた"),
             tsuru.talk("彼女の寝顔、綺麗だったな",
                 "あんな風に笑って向こうに逝けるなら、多少は幸せだったのかなって思えるよ"),
@@ -140,6 +143,7 @@ def sc_theirfuture(w: World):
     sana, noto = W(w.sana), W(w.noto)
     tsuru, komi, asahi = W(w.tsuru), W(w.komi), W(w.asahi)
     return w.scene("彼らの未来に",
+            w.br(),
             noto.be("#実家の自室で驚いている"),
             noto.explain("作家としてデビューが決まり、大学を休学して東京に出る準備をしていた時だった"),
             noto.talk("これは、どういうことなんだ"),
@@ -177,7 +181,7 @@ def sc_theirfuture(w: World):
 
 ## episode
 def ep_letter2(w: World):
-    return w.episode("3.第二の手記",
+    return w.episode("3.$full_notoによる第二の手記",
             ## NOTE
             sc_hersick(w),
             sc_ourvow(w),

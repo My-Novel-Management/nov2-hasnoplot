@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.12.3] - 2020-02-29
+### Fixed
+- chapter 9
+
 ## [0.11.3] - 2020-02-28
 ### Fixed
 - chapter 8
@@ -114,7 +118,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - This CHANGELOG file to hopefully serve as an evolving example of a standardized open source project CHANGELOG.
 - README one line implemented.
 
-[Unreleased]: https://github.com/My-Novel-Management/nov2-hasnoplot/compare/v0.11.3...HEAD
+[Unreleased]: https://github.com/My-Novel-Management/nov2-hasnoplot/compare/v0.12.3...HEAD
+[0.12.3]: https://github.com/My-Novel-Management/nov2-hasnoplot/releases/v0.12.3
 [0.11.3]: https://github.com/My-Novel-Management/nov2-hasnoplot/releases/v0.11.3
 [0.10.3]: https://github.com/My-Novel-Management/nov2-hasnoplot/releases/v0.10.3
 [0.9.3]: https://github.com/My-Novel-Management/nov2-hasnoplot/releases/v0.9.3

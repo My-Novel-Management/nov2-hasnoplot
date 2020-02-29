@@ -23,6 +23,8 @@ def sc_readletter(w: World):
     interior, calendar = W(w.interior), W(w.calendar)
     clock = W(w.clock)
     return w.scene("手紙の内容の序文",
+            sana.explain("それは有名な『人間失格』の一文から始まる、先生の告白の手紙だった"),
+            w.symbol("　　　　※"),
             w.comment("恥の多い生涯を送ってきました、という太宰治の人間失格の序文から始まる"),
             noto.be("#丸テーブルに向かっている"),
             noto.explain("恥の多い生涯を送って来ました、という序文で始めるのが、",
@@ -67,11 +69,12 @@ def sc_readletter(w: World):
 def sc_jrschooldays(w: World):
     noto, tsuru, komi, asahi = W(w.noto), W(w.tsuru), W(w.komi), W(w.asahi)
     return w.scene("中学時代",
+            w.br(),
             noto.be("#教室にいる"),
             tsuru.be("#$notoと二人で話している"),
             noto.explain("彼、$full_tsuruは同じ中学の中でもそのすらりとした体躯と甘いマスク、裕福な家庭の生まれという恵まれた境遇、",
-                "そういった人の注目を浴びる男だった",
-                "方や$meは地味で教室の中でも名前を覚えている人間は限られるといった類の、本当に目立たない男で、",
+                "という人の注目を浴びるべく生まれてきたような男だった",
+                "片や$meは地味で教室の中でも名前を覚えている人間は限られるといった類の、本当に目立たない男で、",
                 "そんな$meに何故彼が声を掛けてきたのか最初は不思議に思っていた"),
             komi.come("#やってくる"),
             komi.talk("ねえ$noto君、この前貸してもらった小説なんだけれど、本の間に挟まってたあのノートの掌編はあなたが書いたもの？"),
@@ -90,8 +93,8 @@ def sc_jrschooldays(w: World):
             noto.explain("それは正に青天の霹靂と呼ぶに相応しい彼女の発言だった"),
             tsuru.talk("何言ってんだよ？", "$notoなんかが作家になれる訳ないだろ",
                 "作家というのはな、ただ美辞麗句を文章にして並べればいいってもんじゃない",
-                "太宰のように人間の深淵を描かなきゃ駄目なんだ", "この唐変木にそれができると言うのか、$full_komi"),
-            komi.talk("$full_tsuru君も、読んでご覧なさい", "これはまだ稚拙な部分が目立つけれど、それでも紛れもなく小説よ",
+                "太宰のように人間の深淵を描かなきゃ駄目なんだ", "この唐変木にそれができると言うのか、$ln_komi"),
+            komi.talk("$tsuru君も、読んでご覧なさい", "これはまだ稚拙な部分が目立つけれど、それでも紛れもなく小説よ",
                 "彼の才能が光ってるわ"),
             tsuru.talk("ちょっと寄越せ"),
             _.do("彼はそのノートの切れ端の物語を分捕り、目を細めて睨みつけるようにして黙った"),
@@ -119,6 +122,7 @@ def sc_schooldays(w: World):
     sana, noto = W(w.sana), W(w.noto)
     tsuru, komi, asahi = W(w.tsuru), W(w.komi), W(w.asahi)
     return w.scene("高校時代",
+            w.br(),
             noto.be("#教室にいる"),
             noto.explain("$meたち三人の関係は地元の県立高に進学しても何も変わらないままだった"),
             tsuru.be("#じっと$komiを見つめている"),
@@ -126,10 +130,10 @@ def sc_schooldays(w: World):
                 "たまにはお前からも$meの小説について意見が聞きたいんだが、正直に言ってくれ",
                 "$meは作家になれると思うか？"),
             noto.explain("当初は彼女へのアプローチの一つとして小説を書いていると思えた$tsuruだったが、",
-                "その魅力に取り憑かれたようで、最近は彼女の評価よりも小説そのものの評価、何より作家になれるのかに関心の比重が移っていた"),
+                "その魅力に取り憑かれたようで、最近は彼女の評価よりも小説そのものの評価、何より作家になれるかどうかに関心の比重が移っていた"),
             noto.talk("そうだな"),
             komi.be("#二人の小説を読んでいる"),
-            noto.do("考え込むように一つ唸り", "&"),
+            noto.do("考え込むように一つ唸り、", "&"),
             komi.look("目の端で$komiが$tsuruの書いてきた原稿用紙の束を読み耽っている様を確認しながら、","&"),
             noto.do("$tsuruに思っていることを小声で伝える"),
             noto.talk("$tsuruは少し現実的過ぎるんじゃないだろうか",
@@ -182,7 +186,7 @@ def sc_schooldays(w: World):
 
 ## episode
 def ep_letter1(w: World):
-    return w.episode("2.第一の手記",
+    return w.episode("2.$full_notoによる第一の手記",
             ## NOTE
             sc_readletter(w),
             sc_jrschooldays(w),

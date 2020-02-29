@@ -22,6 +22,7 @@ def sc_letterlast(w: World):
     tsuchi = W(w.tsuchiura)
     mnote = W(w.masternote)
     return w.scene("先生の手紙の最後",
+            w.symbol("　　　　※"),
             w.comment("手紙の最後にはいつか責任を取らなければならないと書かれていた"),
             noto.voice("――以上が$meの冒した罪の、全ての告白だ"),
             sana.be("#告白の日記を読んでいた"),
@@ -63,7 +64,7 @@ def sc_letterlast(w: World):
                 "統計を取れば作家以外の人間の自殺率とそう変わらないのだろうが、それでも死と向き合う職業だということは確かだと$Sにも思える"),
             _.talk("けど死ぬなんて、それも自殺だなんて、そんなこと$meが絶対許しませんからね"),
             _.do("決意を自分に言い聞かせるように声に出すと、そのノートを閉じて脇に置く"),
-            _.do("目の前のモニタはまだ最終章を残した原稿の冒頭部分だけが書かれ、カーソルが点滅していたが、", "&"),
+            _.do("目の前のモニタにはまだ最終章を残した原稿の冒頭部分だけが書かれ、カーソルが点滅していたが、", "&"),
             _.think("どんなことがあっても最後まで作品は書き切らなければいけない、という先生の言葉を思い出し、", "&"),
             _.do("大きく息を吸い込んで、今一度、キーボードに指を置いた"),
             ## NOTE
@@ -78,6 +79,7 @@ def sc_lastscene(w: World):
     tsuchi = W(w.tsuchiura)
     pc = W(w.mobilepc)
     return w.scene("ラストシーン",
+            w.br(),
             sana.be("#パソコンに向かっている"),
             sana.hear("部屋にはキーボードを叩く音と、パソコンのファンの音、それに時折着信するスマートフォンが声を上げる程度で、",
                 "あとの大半は静寂が満たしていた"),
@@ -137,6 +139,7 @@ def sc_emergency(w: World):
     gero, azu = W(w.gero), W(w.azumino)
     tsuchi = W(w.tsuchiura)
     return w.scene("緊急事態発生",
+            w.symbol("　　　　◆"),
             w.comment("何とか作品を書き上げて寝てしまっていたところに、バイト君から連絡で、先生が病院から消えたと"),
             sana.be("#机に突っ伏して寝ている"),
             sana.hear("どこか遠くでずっと何かのベルが鳴り響いていた", "&"),
@@ -161,7 +164,9 @@ def sc_emergency(w: World):
             azu.come("#荷物を手に入ってきて"),
             azu.talk("これ。$sana宛だって"),
             sana.do("$azuから受け取ったそのビニルの梱包材で包装された茶封筒には、$yuzawaの名前で『資料』と書かれていた", "&"),
-            sana.have("慌てて中身を確認すると、そこには$tsuruの持ち込み原稿が入っていたのだった", w.carryingpaper),
+            sana.have("慌てて中身を確認すると、 古い原稿用紙をコピーしたものが数枚、クリップで留められたものが出てきた",
+                "その原稿用紙の隅に『$tsuru』と斜めになった文字が書かれている",
+                "$yuzawaが言っていた持ち込み原稿のコピーだった", w.carryingpaper),
             tsuchi.voice("ちょっと？　$sanaさん？　もしもしもしもし？"),
             ## NOTE
             ##  先生が消えた、に加えて、証拠品まで突きつけられ、万事休す。そこに更に先生の出版枠に再度編集長がノミオを打ち込む
@@ -170,7 +175,7 @@ def sc_emergency(w: World):
 
 ## episode
 def ep_letter3(w: World):
-    return w.episode("4.第三の手記",
+    return w.episode("4.$full_notoによる第三の手記",
             ## NOTE
             sc_letterlast(w),
             sc_lastscene(w),
